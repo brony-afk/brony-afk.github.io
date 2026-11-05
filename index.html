@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Николай — портфолио</title>
-<meta name="description" content="Продукты, собранные с AI: от идеи до рабочей версии.">
+<title>Николай Бродский — пет-проекты</title>
+<meta name="description" content="Пет-проекты Николая Бродского: небольшие продукты, собранные с AI-инструментами.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -76,6 +76,13 @@ html, body { overflow-x: hidden; }
 .card.soon .body { align-items: center; justify-content: center; }
 .card.soon h3 { color: var(--ink-3); font-size: 18px; }
 
+.tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .tools { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .tools { grid-template-columns: 1fr; } }
+.tool { background: var(--bg-card); border-radius: var(--radius-md); box-shadow: var(--shadow); padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tool .ico { width: 34px; height: 34px; border-radius: var(--radius-chip); background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-family: var(--mono); font-size: 14px; }
+.tool h4 { font-size: 16px; letter-spacing: -.2px; }
+.tool p { font-size: 14px; color: var(--ink-2); }
 .about { background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .how-sub { color: var(--ink-2); font-size: 16px; max-width: 640px; margin: -8px 0 24px; }
 .how { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -97,26 +104,36 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#"><span class="logo">✦</span>brony-afk</a>
-  <div class="links"><a href="#projects">Проекты</a><a href="#how">Как делаю</a><a href="https://github.com/brony-afk">GitHub</a></div>
+  <a class="brand" href="#"><span class="logo">✦</span>Николай Бродский</a>
+  <div class="links"><a href="#projects">Проекты</a><a href="#tools">Инструменты</a><a href="#how">Как делаю</a><a href="https://github.com/brony-afk">GitHub</a></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <span class="badge"><span class="dot"></span>Пет-проекты · вайб-код</span>
-  <div class="eyebrow">Портфолио</div>
-  <h1>Николай — продакт-менеджер в ML. Собираю продукты с AI от идеи до рабочей версии</h1>
-  <p class="sub">Здесь живые сервисы, которые можно открыть и попробовать. Каждый — гипотеза, доведённая до работающего прототипа за дни, а не месяцы.</p>
+  <div class="eyebrow">Хобби</div>
+  <h1>Николай Бродский. Пет-проекты, собранные с AI</h1>
+  <p class="sub">В свободное время собираю небольшие продукты с помощью AI-инструментов: от идеи до живой ссылки. Всё, что ниже, можно открыть и попробовать.</p>
   <div class="chips">
-    <span class="chip">Продукт + разработка с Claude Code</span>
-    <span class="chip">Данные и ML</span>
-    <span class="chip">Быстрые MVP</span>
-    <span class="chip">Боты и автоматизация</span>
+    <span class="chip">Claude Code</span>
+    <span class="chip">AI-агенты</span>
+    <span class="chip">LLM для данных и текстов</span>
+    <span class="chip">Telegram-боты</span>
   </div>
 </div></header>
 
 <section id="projects"><div class="wrap">
   <div class="sec-head"><h2>Проекты</h2><span class="count" id="count"></span></div>
   <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="tools"><div class="wrap">
+  <div class="sec-head"><h2>Инструменты AI</h2></div>
+  <div class="tools">
+    <div class="tool"><div class="ico">&gt;_</div><h4>Claude Code</h4><p>Основной инструмент разработки: ставлю задачу словами, принимаю результат, код пишет AI.</p></div>
+    <div class="tool"><div class="ico">✦</div><h4>AI-агенты</h4><p>Параллельная обработка больших объёмов: десятки агентов разбирают данные по батчам.</p></div>
+    <div class="tool"><div class="ico">¶</div><h4>LLM для данных</h4><p>Описания, переводы, классификация и сверка фактов с первоисточником.</p></div>
+    <div class="tool"><div class="ico">→</div><h4>Автоматизация</h4><p>Python-скрипты, Telegram-боты, публикация на GitHub Pages.</p></div>
+  </div>
 </div></section>
 
 <section class="about" id="how"><div class="wrap" style="padding-top:48px">
@@ -131,7 +148,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 </div></section>
 
 <footer><div class="wrap">
-  <span>✦ brony-afk · портфолио</span>
+  <span>✦ Николай Бродский · пет-проекты</span>
   <span>Обновлено: ноябрь 2026</span>
 </div></footer>
 
