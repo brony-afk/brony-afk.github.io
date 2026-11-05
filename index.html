@@ -55,8 +55,8 @@ html, body { overflow-x: hidden; }
 
 .card { background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
 .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.shot { aspect-ratio: 16/10; background: var(--bg-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; }
-.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.shot { aspect-ratio: 16/9; background: var(--bg-soft); border-bottom: 1px solid var(--line-soft); overflow: hidden; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
 .meta { display: flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--mute); }
 .meta .kind { color: var(--accent); }
@@ -104,6 +104,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
     <span class="chip">Продукт + разработка с Claude Code</span>
     <span class="chip">Данные и ML</span>
     <span class="chip">Быстрые MVP</span>
+    <span class="chip">Боты и автоматизация</span>
   </div>
 </div></header>
 
@@ -138,6 +139,16 @@ const PROJECTS = [
     image: "projects/memgenbro.jpg",
     demo: "https://brony-afk.github.io/memgenbro/",
     code: "https://github.com/brony-afk/memgenbro"
+  },
+  {
+    name: "Пора на запуск",
+    kind: "Telegram-канал + бот",
+    year: "2026",
+    desc: "Разборы западных стартапов, которые можно запустить микропродуктом в России: суть идеи, аналоги у нас и первая версия, которую реально собрать самому. Отбор, слайды и публикации автоматизированы, канал ведёт свой бот.",
+    facts: ["972 стартапа в базе", "разбор каждый будний день", "слайды генерируются кодом"],
+    image: "projects/pora-na-zapusk.jpg",
+    demo: "https://t.me/pora_na_zapusk",
+    cta: "Открыть канал →"
   }
 ];
 
@@ -152,7 +163,7 @@ grid.innerHTML = PROJECTS.map(p => `
       <p>${esc(p.desc)}</p>
       <div class="facts">${p.facts.map(f => `<span class="fact">${esc(f)}</span>`).join('')}</div>
       <div class="actions">
-        <a class="btn primary" href="${esc(p.demo)}">Открыть →</a>
+        <a class="btn primary" href="${esc(p.demo)}">${esc(p.cta || "Открыть →")}</a>
         ${p.code ? `<a class="btn ghost" href="${esc(p.code)}">Код</a>` : ''}
       </div>
     </div>
