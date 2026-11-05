@@ -86,8 +86,7 @@ html, body { overflow-x: hidden; }
 .tool p { font-size: 14px; color: var(--ink-2); }
 .about { background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .how-sub { color: var(--ink-2); font-size: 16px; max-width: 640px; margin: -8px 0 24px; }
-.how { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-@media (max-width: 1000px) { .how { grid-template-columns: repeat(2, 1fr); } }
+.how { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 760px; }
 @media (max-width: 600px) { .how { grid-template-columns: 1fr; } }
 .step { background: var(--bg); border-radius: var(--radius-md); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
 .step-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
@@ -115,7 +114,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <h1>Николай Бродский&nbsp;— продакт‑менеджер.<br><span class="h1-2">Мои пет-проекты, собранные с AI</span></h1>
   <p class="sub">В свободное время собираю небольшие продукты с помощью AI-инструментов: от идеи до живой ссылки. Всё, что ниже, можно открыть и попробовать.</p>
   <div class="chips">
-    <span class="chip">Claude Code</span>
+    <span class="chip">AI-разработка</span>
     <span class="chip">AI-агенты</span>
     <span class="chip">LLM для данных и текстов</span>
     <span class="chip">Telegram-боты</span>
@@ -130,7 +129,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 <section id="tools"><div class="wrap">
   <div class="sec-head"><h2>Инструменты AI</h2></div>
   <div class="tools">
-    <div class="tool"><div class="ico">&gt;_</div><h4>Claude Code</h4><p>Основной инструмент разработки: ставлю задачу словами, принимаю результат, код пишет AI.</p></div>
+    <div class="tool"><div class="ico">&gt;_</div><h4>AI-разработка</h4><p>Основной способ разработки: ставлю задачу словами, принимаю результат, код пишет AI.</p></div>
     <div class="tool"><div class="ico">✦</div><h4>AI-агенты</h4><p>Параллельная обработка больших объёмов: десятки агентов разбирают данные по батчам.</p></div>
     <div class="tool"><div class="ico">¶</div><h4>LLM для данных</h4><p>Описания, переводы, классификация и сверка фактов с первоисточником.</p></div>
     <div class="tool"><div class="ico">→</div><h4>Автоматизация</h4><p>Python-скрипты, Telegram-боты, публикация на GitHub Pages.</p></div>
@@ -139,12 +138,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 
 <section class="about" id="how"><div class="wrap" style="padding-top:48px">
   <div class="sec-head"><h2>Как я делаю проекты</h2></div>
-  <p class="how-sub">Один подход для всех проектов: короткий путь от гипотезы до живой ссылки.</p>
   <div class="how">
-    <div class="step"><div class="step-top"><div class="num">1</div><span class="step-label">Задача</span></div><h4>Работа, а не фича</h4><p>Начинаю с того, какую работу человек хочет сделать, и решаю заранее, по какому признаку пойму, что продукт нужен.</p></div>
-    <div class="step"><div class="step-top"><div class="num">2</div><span class="step-label">Проверка</span></div><h4>Самый дешёвый тест</h4><p>Прежде чем строить, ищу способ проверить интерес малой ценой: канал, лендинг-заглушка, прототип на одну страницу.</p></div>
-    <div class="step"><div class="step-top"><div class="num">3</div><span class="step-label">Сборка</span></div><h4>AI — моя команда</h4><p>Ставлю задачу и принимаю результат как продакт, код и обработку данных делают AI-агенты. Факты сверяю с первоисточником.</p></div>
-    <div class="step"><div class="step-top"><div class="num">4</div><span class="step-label">Запуск</span></div><h4>Ссылка в руки</h4><p>Выкладываю как можно раньше, смотрю, как пользуются, и дорабатываю. Что не заходит — закрываю без сожалений.</p></div>
+    <div class="step"><div class="step-top"><div class="num">1</div><span class="step-label">Задача</span></div><h4>Работа, а не фича</h4><p>Начинаю не с функций, а с работы, которую человек хочет сделать. Обычно это задача, которая мешает мне самому или друзьям.</p></div>
+    <div class="step"><div class="step-top"><div class="num">2</div><span class="step-label">Сборка</span></div><h4>AI — моя команда</h4><p>Ставлю задачу и принимаю результат как продакт, код и обработку данных делают AI-агенты. Факты сверяю с первоисточником.</p></div>
   </div>
 </div></section>
 
