@@ -166,6 +166,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 // Новый проект = новый объект в этом списке
 const PROJECTS = [
   {
+    name: "DeckBro",
+    kind: "Сервис",
+    year: "2026",
+    desc: "Оформление презентаций: присылаешь черновик pptx в Telegram — через несколько минут получаешь ту же презентацию в аккуратном дизайне. Тексты и цифры не меняются, файл остаётся редактируемым, на каждый слайд — несколько вариантов оформления на выбор.",
+    facts: ["редактируемый pptx", "5 палитр", "несколько вариантов на слайд", "3 слайда бесплатно"],
+    image: "projects/deckbro.jpg",
+    demo: "https://deckbro.ru/?utm_source=portfolio",
+    extra: { label: "Бот в Telegram", url: "https://t.me/DeckBro_bot?start=portfolio" }
+  },
+  {
     name: "MemGenBro",
     kind: "Веб-сервис",
     year: "2026",
@@ -200,6 +210,7 @@ grid.innerHTML = PROJECTS.map(p => `
       <div class="actions">
         <a class="btn primary" href="${esc(p.demo)}">${esc(p.cta || "Открыть →")}</a>
         ${p.code ? `<a class="btn ghost" href="${esc(p.code)}">Код</a>` : ''}
+        ${p.extra ? `<a class="btn ghost" href="${esc(p.extra.url)}">${esc(p.extra.label)}</a>` : ''}
       </div>
     </div>
   </article>`).join('') + `
