@@ -118,10 +118,23 @@ img { max-width: 100%; display: block; }
     width: 32px; height: 32px; border-radius: 8px;
     border: 1px solid var(--line);
     display: none; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--ink-2);
+    color: var(--ink-2);
 }
 .nav__social a.soc.is-visible { display: inline-flex; }
 .nav__social a.soc:hover { border-color: var(--ink); color: var(--ink); }
+
+.nav__social a.soc svg.soc-glyph,
+a.soc-ico svg.soc-glyph { width: 15px; height: 15px; display: block; }
+a.soc-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; vertical-align: middle;
+  border-radius: 8px; color: inherit; text-decoration: none;
+  opacity: .85;
+}
+a.soc-ico:hover { opacity: 1; }
+.contact-line a.soc-ico { margin-right: 4px; }
+.footer__links a.soc-ico { width: 28px; height: 28px; }
+
 
 .hero {
     max-width: 1180px;
@@ -728,8 +741,8 @@ img { max-width: 100%; display: block; }
       <a class="nav__link" href="#reviews">Отзывы</a>
     </div>
     <div class="nav__social">
-      <a class="soc" id="nav-ig" href="#" target="_blank" rel="noopener" title="Instagram">IG</a>
-      <a class="soc" id="nav-tg-channel" href="#" target="_blank" rel="noopener" title="Telegram-канал">TG</a>
+      <a class="soc" id="nav-ig" href="#" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a class="soc" id="nav-tg-channel" href="#" target="_blank" rel="noopener" title="Telegram-канал" aria-label="Telegram-канал"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.02.219.02.289.126a.506.506 0 0 1 .047.268L15.1 17.715c-.14.626-.52.778-1.056.483l-2.925-2.156-1.412 1.36c-.156.156-.287.287-.588.287l.21-2.98 5.418-4.896c.236-.21-.051-.327-.365-.117L8.25 13.547l-2.895-.904c-.63-.196-.642-.63.132-.931l11.29-4.35c.53-.2 1.01-.09 1.13.31z"/></svg></a>
       <a class="nav__cta" href="#contacts" data-book="разбор кожи / индивидуальный протокол">Запись</a>
     </div>
   </div>
@@ -1051,8 +1064,8 @@ img { max-width: 100%; display: block; }
         <div class="contact-line"><b>WhatsApp:</b> <a href="tel:+79262673385">+7 (926) 267-33-85</a></div>
         <div class="contact-line"><b>Адрес:</b> Мытищи, Шараповский пр., вл2с3</div>
         <div class="contact-line contact-social is-hidden" id="cta-social-line"><b>Соцсети:</b>
-          <a id="cta-ig" href="#" target="_blank" rel="noopener">Instagram</a> ·
-          <a id="cta-tg-channel" href="#" target="_blank" rel="noopener">Telegram-канал</a>
+          <a class="soc-ico" id="cta-ig" href="#" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a class="soc-ico" id="cta-tg-channel" href="#" target="_blank" rel="noopener" title="Telegram-канал" aria-label="Telegram-канал"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.02.219.02.289.126a.506.506 0 0 1 .047.268L15.1 17.715c-.14.626-.52.778-1.056.483l-2.925-2.156-1.412 1.36c-.156.156-.287.287-.588.287l.21-2.98 5.418-4.896c.236-.21-.051-.327-.365-.117L8.25 13.547l-2.895-.904c-.63-.196-.642-.63.132-.931l11.29-4.35c.53-.2 1.01-.09 1.13.31z"/></svg></a>
         </div>
       </div>
     </div>
@@ -1072,8 +1085,8 @@ img { max-width: 100%; display: block; }
     </div>
     <div class="footer__meta">Мытищи · протокол, не прайс</div>
     <div class="footer__links">
-      <a id="foot-ig" class="is-hidden" href="#" target="_blank" rel="noopener">Instagram</a>
-      <a id="foot-tg" class="is-hidden" href="#" target="_blank" rel="noopener">Telegram</a>
+      <a class="soc-ico is-hidden" id="foot-ig" href="#" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a class="soc-ico is-hidden" id="foot-tg" href="#" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><svg class="soc-glyph" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.02.219.02.289.126a.506.506 0 0 1 .047.268L15.1 17.715c-.14.626-.52.778-1.056.483l-2.925-2.156-1.412 1.36c-.156.156-.287.287-.588.287l.21-2.98 5.418-4.896c.236-.21-.051-.327-.365-.117L8.25 13.547l-2.895-.904c-.63-.196-.642-.63.132-.931l11.29-4.35c.53-.2 1.01-.09 1.13.31z"/></svg></a>
       <a href="https://wa.me/79262673385" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
