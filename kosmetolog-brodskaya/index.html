@@ -90,10 +90,10 @@ iframe {
     Превью для ОС · A / B
   </div>
   <div class="switch" role="tablist" aria-label="Версия лендинга">
-    <a href="?v=b" id="tab-b" class="is-active">Версия B · упрощённый E</a>
-    <a href="?v=a" id="tab-a">Версия A · бережно</a>
+    <a href="?v=a" id="tab-a" class="is-active">Версия A · бережно</a>
+    <a href="?v=b" id="tab-b">Версия B · упрощённый E</a>
   </div>
-  <div class="bar__note">По умолчанию — B</div>
+  <div class="bar__note">По умолчанию — A</div>
 </div>
 <div class="frame-wrap" id="frame-wrap" hidden>
   <iframe id="frame" title="Превью лендинга"></iframe>
@@ -102,31 +102,31 @@ iframe {
   <h1>Две версии лендинга</h1>
   <p>Выберите вариант для просмотра. Переключатель сверху останется на обеих страницах превью.</p>
   <div class="cards">
-    <a class="card card--default" href="?v=b">
-      <div class="card__kicker">Версия B · по умолчанию</div>
-      <h2>Сегмент E, упрощённый</h2>
-      <p>Протокол после неудачного опыта. Короче: ≤3 тезиса в блоке, простые формулировки.</p>
-    </a>
-    <a class="card" href="?v=a">
-      <div class="card__kicker">Версия A</div>
+    <a class="card card--default" href="?v=a">
+      <div class="card__kicker">Версия A · по умолчанию</div>
       <h2>Бережно + анамнез</h2>
       <p>Предыдущий продающий лендинг (AJTBD) — до большой перестройки под сегмент E.</p>
     </a>
+    <a class="card" href="?v=b">
+      <div class="card__kicker">Версия B</div>
+      <h2>Сегмент E, упрощённый</h2>
+      <p>Протокол после неудачного опыта. Короче: ≤3 тезиса в блоке, простые формулировки.</p>
+    </a>
   </div>
-  <p class="hint">Прямые ссылки: <a href="v-b/">/v-b/</a> · <a href="v-a/">/v-a/</a></p>
+  <p class="hint">Прямые ссылки: <a href="v-a/">/v-a/</a> · <a href="v-b/">/v-b/</a></p>
 </div>
 <script>
 (function () {
   var params = new URLSearchParams(location.search);
-  var v = (params.get('v') || 'b').toLowerCase();
-  if (v !== 'a' && v !== 'b') v = 'b';
+  var v = (params.get('v') || 'a').toLowerCase();
+  if (v !== 'a' && v !== 'b') v = 'a';
   var tabA = document.getElementById('tab-a');
   var tabB = document.getElementById('tab-b');
   var hub = document.getElementById('hub');
   var wrap = document.getElementById('frame-wrap');
   var frame = document.getElementById('frame');
 
-  // Always show iframe when ?v= present OR default to B embedded
+  // Always show iframe when ?v= present OR default to A embedded
   var embed = params.has('v') || location.hash === '#preview' || true;
   if (embed) {
     hub.hidden = true;
