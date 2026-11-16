@@ -3,980 +3,140 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Косметолог Бродская — Мытищи</title>
-<meta name="description" content="Бережная космеология в Мытищах: привести кожу в порядок с анамнезом и понятным планом — чистки, пилинги, восстановление. Запись в WhatsApp и Telegram. Рейтинг 4,9.">
+<title>Косметолог Бродская — превью A/B</title>
+<meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#F2F3F7">
 <link rel="icon" href="assets/web/logo-mark.png" type="image/png">
-
-<!--
-  Стиль: «Минимализм с А» (композиция как landing-v4-fakedoor-alfa.html)
-  Акцент: dusty rose / lavender под бьюти-лого (не Alfa-red).
-  Медиа: Яндекс Карты + лого через Higgsfield (см. assets/logo/).
--->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
-    --ink: #14161A;
-    --ink-2: #4B5563;
-    --ink-3: #6B7280;
-    --mute: #9CA3AF;
-    --line: #E5E7EB;
-    --line-soft: #F0F1F4;
-    --bg: #F2F3F7;
-    --bg-card: #FFFFFF;
-    --bg-soft: #F8F8FA;
-    --accent: #B76E79;
-    --accent-dark: #94555F;
-    --accent-soft: #F7EBED;
-    --lavender: #9B7BB0;
-    --success: #1FA85B;
-    --shadow-sm: 0 1px 2px rgba(20, 22, 26, 0.04);
-    --shadow: 0 2px 12px rgba(20, 22, 26, 0.04);
-    --shadow-lg: 0 4px 24px rgba(20, 22, 26, 0.06);
-    --radius-lg: 20px;
-    --radius-md: 16px;
-    --radius-sm: 12px;
-    --radius-chip: 8px;
-    --radius-pill: 999px;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
-    --mono: 'Menlo', 'Consolas', 'Monaco', monospace;
+  --ink: #14161A;
+  --ink-2: #4B5563;
+  --ink-3: #6B7280;
+  --line: #E5E7EB;
+  --bg: #F2F3F7;
+  --card: #fff;
+  --accent: #B76E79;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
-
-html { scroll-behavior: smooth; }
+html, body { height: 100%; }
 body {
-    font-family: var(--font);
-    background: var(--bg);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    font-size: 15px;
-    line-height: 1.5;
-}
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
-img { max-width: 100%; display: block; }
-
-.nav {
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--line-soft);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-}
-.nav__inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 12px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-}
-.nav__brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-}
-.nav__logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    object-fit: cover;
-    background: #fff;
-    border: 1px solid var(--line-soft);
-}
-.nav__links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-.nav__link {
-    font-size: 13.5px;
-    color: var(--ink-3);
-    padding: 6px 0;
-    border-bottom: 2px solid transparent;
-}
-.nav__link:hover { color: var(--ink); }
-.nav__link--active { color: var(--ink); border-bottom-color: var(--accent); }
-.nav__cta {
-    display: inline-flex;
-    padding: 8px 16px;
-    background: var(--ink);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: var(--radius-pill);
-}
-.nav__social { display: flex; gap: 8px; align-items: center; }
-.nav__social a.soc {
-    width: 32px; height: 32px; border-radius: 8px;
-    border: 1px solid var(--line);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--ink-2);
-}
-.nav__social a.soc:hover { border-color: var(--ink); color: var(--ink); }
-
-.hero {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 40px 28px 12px;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 28px;
-    align-items: center;
-}
-.hero__copy { text-align: left; }
-.status-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
-    box-shadow: var(--shadow-sm);
-}
-.status-badge__dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--success);
-    animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
-.status-badge__text {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.6px;
-    text-transform: uppercase; color: var(--ink-3);
-}
-.hero__eyebrow {
-    margin-top: 18px;
-    font-size: 11.5px; font-weight: 700; color: var(--accent);
-    letter-spacing: 0.08em; text-transform: uppercase;
-}
-.hero h1 {
-    font-size: 38px; font-weight: 700; line-height: 1.15;
-    letter-spacing: -1.1px; margin-top: 10px; max-width: 520px;
-}
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero__sub {
-    font-size: 15.5px; line-height: 25px; color: var(--ink-2);
-    max-width: 480px; margin-top: 14px;
-}
-.hero__cta-row {
-    display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;
-}
-.btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 22px; background: var(--ink); color: #fff;
-    font-size: 14px; font-weight: 600; border-radius: var(--radius-pill);
-}
-.btn-primary:hover { background: #000; }
-.btn-ghost {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 20px; background: var(--bg-card); color: var(--ink);
-    font-size: 14px; font-weight: 500; border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
-}
-.btn-ghost:hover { border-color: var(--ink); }
-.btn-wa, .btn-tg {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 10px 16px; color: #fff; font-size: 13px; font-weight: 600;
-    border-radius: var(--radius-pill);
-}
-.btn-wa { background: #25D366; }
-.btn-tg { background: #229ED9; }
-.btn-wa:hover, .btn-tg:hover { filter: brightness(0.96); }
-
-.hero__trust {
-    margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap;
-}
-.trust-chip {
-    font-family: var(--mono); font-size: 11px; color: var(--ink-3);
-    letter-spacing: 0.5px; text-transform: uppercase;
-}
-.trust-chip::before {
-    content: "•"; color: var(--accent); margin-right: 6px; font-size: 14px;
-}
-
-.hero__visual {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: var(--bg-card);
-    min-height: 360px;
-}
-.hero__visual img {
-    width: 100%; height: 100%; object-fit: cover; min-height: 360px;
-}
-.hero__badge {
-    position: absolute; left: 16px; bottom: 16px;
-    background: rgba(255,255,255,0.94);
-    border-radius: var(--radius-md);
-    padding: 12px 14px;
-    box-shadow: var(--shadow);
-    max-width: 220px;
-}
-.hero__badge strong { display: block; font-size: 14px; letter-spacing: -0.2px; }
-.hero__badge span {
-    font-family: var(--mono); font-size: 10.5px; color: var(--ink-3);
-    letter-spacing: 0.4px; text-transform: uppercase;
-}
-
-.section { max-width: 1180px; margin: 0 auto; padding: 48px 28px; }
-.section--alt { background: var(--bg-card); max-width: none; padding: 56px 28px; }
-.section--alt .section__inner { max-width: 1180px; margin: 0 auto; }
-.section__eyebrow {
-    font-size: 11.5px; font-weight: 700; color: var(--accent);
-    letter-spacing: 0.08em; text-transform: uppercase; text-align: center;
-}
-.section__title {
-    font-size: 28px; font-weight: 700; letter-spacing: -0.7px;
-    text-align: center; margin-top: 10px;
-}
-.section__sub {
-    text-align: center; font-size: 15px; color: var(--ink-2);
-    max-width: 540px; margin: 12px auto 0; line-height: 1.55;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 24px;
-    margin-top: 32px;
-    align-items: stretch;
-}
-.about-photo {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    background: var(--bg);
-    min-height: 320px;
-}
-.about-photo img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
-.about-card {
-    background: var(--bg);
-    border-radius: var(--radius-lg);
-    padding: 28px 26px;
-    border: 1px solid var(--line-soft);
-}
-.about-card h3 {
-    font-size: 22px; letter-spacing: -0.5px; font-weight: 700;
-}
-.about-card p { margin-top: 12px; color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
-.about-points { margin-top: 18px; display: grid; gap: 10px; }
-.about-point {
-    display: flex; gap: 10px; align-items: flex-start;
-    font-size: 13.5px; color: var(--ink-2); line-height: 1.45;
-}
-.about-point i {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--accent-soft); color: var(--accent-dark);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-style: normal; font-size: 12px; font-weight: 700; flex-shrink: 0;
-}
-
-.services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 16px; margin-top: 32px;
-}
-.service {
-    display: flex; flex-direction: column;
-    background: var(--bg-card); padding: 22px 20px 18px;
-    border-radius: var(--radius-md); box-shadow: var(--shadow);
-    border: 2px solid transparent;
-}
-.service:hover { box-shadow: var(--shadow-lg); border-color: var(--line); }
-.service--focus {
-    background: linear-gradient(180deg, var(--accent-soft) 0%, #fff 60%);
-    border-color: var(--accent);
-}
-.service__badge {
-    display: inline-flex; align-self: flex-start;
-    background: var(--accent); color: #fff;
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.6px;
-    text-transform: uppercase; padding: 4px 10px; border-radius: var(--radius-pill);
-    margin-bottom: 12px; font-weight: 700;
-}
-.service__num {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.55px;
-    color: var(--mute); text-transform: uppercase; font-weight: 600;
-}
-.service--focus .service__num { color: var(--accent-dark); }
-.service__title {
-    font-size: 16px; font-weight: 700; line-height: 22px;
-    letter-spacing: -0.4px; margin-top: 8px; min-height: 44px;
-}
-.service__desc {
-    font-size: 12.5px; line-height: 19px; color: var(--ink-2);
-    margin-top: 10px; flex-grow: 1;
-}
-.service__meta { border-top: 1px solid var(--line-soft); margin-top: 16px; padding-top: 14px; }
-.service__price { font-size: 17px; font-weight: 700; letter-spacing: -0.4px; }
-.service__unit {
-    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
-    letter-spacing: 0.4px; text-transform: uppercase; margin-top: 2px;
-}
-.service__actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-.service__actions .btn-wa, .service__actions .btn-tg { padding: 8px 12px; font-size: 12px; }
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    grid-template-rows: 200px 200px;
-    gap: 12px;
-    margin-top: 32px;
-}
-.gallery-item {
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    background: var(--bg);
-}
-.gallery-item--wide { grid-row: span 2; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-
-.why-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 14px; margin-top: 32px;
-}
-.why-card {
-    background: var(--bg); border: 1px solid var(--line-soft);
-    border-radius: var(--radius-md); padding: 20px 18px;
-}
-.why-card__icon {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--accent-soft); color: var(--accent-dark);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-}
-.why-card__title { font-size: 15px; font-weight: 700; margin-top: 12px; letter-spacing: -0.3px; }
-.why-card__text { font-size: 13px; color: var(--ink-2); margin-top: 6px; line-height: 1.45; }
-
-.steps-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 14px; margin-top: 32px;
-}
-.step-card {
-    background: var(--bg-card); border-radius: var(--radius-md);
-    box-shadow: var(--shadow); padding: 22px 20px;
-}
-.step-card__n {
-    width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff;
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 12px; font-weight: 700;
-}
-.step-card__title { font-size: 16px; font-weight: 700; margin-top: 14px; letter-spacing: -0.3px; }
-.step-card__text { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.5; }
-
-.rating-row { display: flex; justify-content: center; margin-top: 24px; }
-.rating-pill {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--bg); border: 1px solid var(--line);
-    border-radius: var(--radius-pill); padding: 10px 16px;
-}
-.rating-pill__score { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
-.rating-pill__meta {
-    font-family: var(--mono); font-size: 10.5px; color: var(--ink-3);
-    letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.35;
-}
-.reviews-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 14px; margin-top: 28px;
-}
-.review {
-    background: var(--bg); border: 1px solid var(--line-soft);
-    border-radius: var(--radius-md); padding: 20px;
-}
-.review__top { display: flex; justify-content: space-between; gap: 12px; }
-.review__name { font-weight: 700; font-size: 14px; }
-.review__date {
-    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
-    text-transform: uppercase; letter-spacing: 0.4px;
-}
-.review__stars { color: var(--accent); font-size: 12px; letter-spacing: 1px; margin-top: 6px; }
-.review__text { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; margin-top: 10px; }
-.reviews-note { text-align: center; margin-top: 18px; font-size: 12.5px; color: var(--ink-3); }
-.reviews-note a { color: var(--accent-dark); border-bottom: 1px solid var(--accent-soft); }
-
-.faq-list { max-width: 720px; margin: 28px auto 0; }
-.faq-item {
-    background: var(--bg-card); border-radius: var(--radius-md);
-    box-shadow: var(--shadow); margin-bottom: 10px; overflow: hidden;
-}
-.faq-item summary {
-    list-style: none; cursor: pointer; padding: 18px 20px;
-    font-weight: 600; font-size: 14.5px;
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-}
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after {
-    content: "+"; color: var(--accent); font-family: var(--mono);
-    font-size: 18px; font-weight: 700;
-}
-.faq-item[open] summary::after { content: "—"; }
-.faq-item__body { padding: 0 20px 18px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
-
-.cta-band { max-width: 1180px; margin: 0 auto 48px; padding: 0 28px; }
-.cta-card {
-    background: var(--bg-card); border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg); padding: 36px 32px;
-    display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center;
-}
-.cta-card__eyebrow {
-    font-size: 11.5px; font-weight: 700; color: var(--accent);
-    letter-spacing: 0.08em; text-transform: uppercase;
-}
-.cta-card h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.6px; margin-top: 8px; }
-.cta-card p { color: var(--ink-2); margin-top: 10px; font-size: 14.5px; line-height: 1.55; }
-.cta-card__actions { display: flex; flex-direction: column; gap: 10px; }
-.cta-card__actions .btn-wa,
-.cta-card__actions .btn-tg,
-.cta-card__actions .btn-primary { justify-content: center; width: 100%; }
-.contact-lines { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
-.contact-line { font-size: 13.5px; color: var(--ink-2); }
-.contact-line b { color: var(--ink); font-weight: 600; }
-.contact-line a { border-bottom: 1px solid var(--line); }
-
-.footer {
-    border-top: 1px solid var(--line-soft); background: var(--bg-card); padding: 28px;
-}
-.footer__inner {
-    max-width: 1180px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 16px; flex-wrap: wrap;
-}
-.footer__brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; }
-.footer__brand img {
-    width: 36px; height: 36px; border-radius: 8px; object-fit: cover;
-    border: 1px solid var(--line-soft);
-}
-.footer__meta {
-    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
-    letter-spacing: 0.4px; text-transform: uppercase;
-}
-.footer__links { display: flex; gap: 14px; flex-wrap: wrap; }
-.footer__links a { font-size: 13px; color: var(--ink-3); }
-.footer__links a:hover { color: var(--ink); }
-
-.toast {
-    position: fixed; left: 50%; bottom: 24px;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--ink); color: #fff; padding: 12px 18px;
-    border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;
-    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
-    z-index: 100; max-width: 90vw; text-align: center;
-}
-.toast--show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-.modal-backdrop {
-    position: fixed; inset: 0; background: rgba(20, 22, 26, 0.4);
-    display: none; align-items: flex-end; justify-content: center;
-    z-index: 80; padding: 16px;
-}
-.modal-backdrop--open { display: flex; }
-.modal {
-    background: var(--bg-card); border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg); width: min(420px, 100%);
-    padding: 24px 22px 20px;
-}
-.modal__title { font-size: 18px; font-weight: 700; letter-spacing: -0.4px; }
-.modal__sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; }
-.modal__preview {
-    margin-top: 14px; background: var(--bg-soft); border: 1px solid var(--line-soft);
-    border-radius: var(--radius-sm); padding: 12px 14px;
-    font-size: 13px; color: var(--ink-2); line-height: 1.45;
-}
-.modal__actions { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-.modal__actions .btn-wa, .modal__actions .btn-tg, .modal__close {
-    justify-content: center; width: 100%;
-}
-.modal__close {
-    display: inline-flex; align-items: center; padding: 10px 16px;
-    color: var(--ink-3); font-size: 13px;
-}
-
-@media (max-width: 1000px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero__copy { text-align: center; }
-    .hero h1, .hero__sub { margin-left: auto; margin-right: auto; }
-    .hero__cta-row, .hero__trust { justify-content: center; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .why-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: 1fr; }
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-    .gallery-item--wide { grid-row: auto; grid-column: span 2; min-height: 220px; }
-    .gallery-item { min-height: 180px; }
-    .cta-card { grid-template-columns: 1fr; }
-}
-@media (max-width: 760px) {
-    .nav__links { display: none; }
-    .hero { padding: 28px 18px 8px; }
-    .hero h1 { font-size: 30px; }
-    .services-grid, .steps-grid, .reviews-grid, .why-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-item--wide { grid-column: auto; }
-    .section { padding: 40px 18px; }
-    .cta-band { padding: 0 18px; }
-    .nav__inner { padding: 10px 18px; }
-}
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap;
+}
+.bar__brand {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 700;
+}
+.bar__brand img {
+  width: 32px; height: 32px; border-radius: 8px;
+  border: 1px solid var(--line); object-fit: cover; background: #fff;
+}
+.bar__note { font-size: 12px; color: var(--ink-3); }
+.switch {
+  display: inline-flex; padding: 3px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 999px; gap: 2px;
+}
+.switch a {
+  text-decoration: none; color: var(--ink-2);
+  font-size: 13px; font-weight: 600;
+  padding: 8px 14px; border-radius: 999px;
+}
+.switch a.is-active {
+  background: var(--ink); color: #fff;
+}
+.switch a:hover:not(.is-active) { color: var(--ink); }
+.frame-wrap { height: calc(100% - 58px); }
+iframe {
+  width: 100%; height: 100%; border: 0; display: block; background: var(--bg);
+}
+.hub {
+  max-width: 720px; margin: 48px auto; padding: 0 20px 60px;
+}
+.hub h1 { font-size: 28px; letter-spacing: -0.6px; margin-bottom: 10px; }
+.hub p { color: var(--ink-2); line-height: 1.55; margin-bottom: 22px; }
+.cards { display: grid; gap: 14px; }
+@media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 20px; text-decoration: none; color: inherit;
+  transition: border-color .15s, box-shadow .15s;
+}
+.card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(20,22,26,.06); }
+.card__kicker { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.card h2 { font-size: 18px; margin-bottom: 8px; }
+.card p { font-size: 14px; margin: 0; color: var(--ink-2); }
+.card--default { border-color: var(--ink); }
+.hint { margin-top: 18px; font-size: 12px; color: var(--ink-3); }
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav__inner">
-    <a class="nav__brand" href="#">
-      <img class="nav__logo" src="assets/web/logo.png" alt="Косметолог Бродская">
-      Косметолог Бродская
-    </a>
-    <div class="nav__links">
-      <a class="nav__link nav__link--active" href="#services">Услуги</a>
-      <a class="nav__link" href="#about">Обо мне</a>
-      <a class="nav__link" href="#gallery">Кабинет</a>
-      <a class="nav__link" href="#reviews">Отзывы</a>
-      <a class="nav__link" href="#faq">Вопросы</a>
-    </div>
-    <div class="nav__social">
-      <a class="soc" id="nav-ig" href="#" target="_blank" rel="noopener" title="Instagram">IG</a>
-      <a class="soc" id="nav-tg-channel" href="#" target="_blank" rel="noopener" title="Telegram-канал">TG</a>
-      <a class="nav__cta" href="#contacts" data-book="разбор задачи кожи / подбор процедуры">Запись</a>
-    </div>
+<div class="bar">
+  <div class="bar__brand">
+    <img src="assets/web/logo.png" alt="">
+    Превью для ОС · A / B
   </div>
-</nav>
-
-<header class="hero">
-  <div class="hero__copy">
-    <div class="status-badge">
-      <span class="status-badge__dot"></span>
-      <span class="status-badge__text">Мытищи · запись в мессенджер</span>
-    </div>
-    <div class="hero__eyebrow">Косметолог Анна Бродская · Мытищи</div>
-    <h1>Приведите кожу в порядок <em>бережно</em> — с анамнезом и понятным планом</h1>
-    <p class="hero__sub">
-      Когда беспокоят высыпания, поры или тусклый тон — или прошлый визит был жёстким и непонятным:
-      разбираем состояние кожи, объясняю «зачем», даю уход домой. Для женщин, мужчин и подростков от 11–12 лет.
-    </p>
-    <div class="hero__cta-row">
-      <a class="btn-primary" href="#services">Выбрать процедуру →</a>
-      <a class="btn-ghost" href="#contacts" data-book="разбор задачи кожи / подбор процедуры">Разобрать задачу кожи →</a>
-    </div>
-    <div class="hero__trust">
-      <span class="trust-chip">4,9 на Яндекс Картах</span>
-      <span class="trust-chip">28+ отзывов</span>
-      <span class="trust-chip">Шараповский пр., вл2с3</span>
-    </div>
+  <div class="switch" role="tablist" aria-label="Версия лендинга">
+    <a href="?v=b" id="tab-b" class="is-active">Версия B · упрощённый E</a>
+    <a href="?v=a" id="tab-a">Версия A · бережно</a>
   </div>
-  <div class="hero__visual">
-    <img src="assets/web/hero-cabinet.jpg" alt="Кабинет косметолога Бродской в Мытищах" width="1600" height="726">
-    <div class="hero__badge">
-      <strong>Кабинет в Мытищах</strong>
-      <span>Чисто · спокойно · по записи</span>
-    </div>
-  </div>
-</header>
-
-<section class="section--alt" id="about">
-  <div class="section__inner">
-    <div class="section__eyebrow">Обо мне</div>
-    <h2 class="section__title">Анна Бродская</h2>
-    <p class="section__sub">Если кожа беспокоит — важно, чтобы было понятно и спокойно: что делаем, зачем и как ухаживать дальше. Работаю с женщинами, мужчинами и подростками от 11–12 лет.</p>
-    <div class="about-grid">
-      <div class="about-photo">
-        <img src="assets/web/photo-anna.jpg" alt="Косметолог Анна Бродская" width="540" height="864">
-      </div>
-      <div class="about-card">
-        <h3>Бережно и по делу — не «процедура наугад»</h3>
-        <p>Перед процедурой собираю анамнез: противопоказания, аллергии, что уже пробовали. Объясняю, что делаем и зачем — можно задавать вопросы по ходу. Сейчас получаю медицинское образование: глубже разбираюсь в физике и биохимии процессов кожи, чтобы выбирать протокол осмысленно, а не только по привычной технике.</p>
-        <div class="about-points">
-          <div class="about-point"><i>✓</i><span>Чистки и пилинги без лишней травмы — под задачу кожи</span></div>
-          <div class="about-point"><i>✓</i><span>Рекомендации и список средств «под вашу кожу», не общий шаблон</span></div>
-          <div class="about-point"><i>✓</i><span>Кабинет в бьюти-коворкинге — время согласуем в переписке</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="section__eyebrow">Услуги</div>
-  <h2 class="section__title">Процедуры под задачу кожи</h2>
-  <p class="section__sub">Выберите, что ближе к вашей задаче — в чат уйдёт готовый текст записи. Протокол уточним после короткого разбора.</p>
-  <div class="services-grid" id="services-grid"></div>
-</section>
-
-<section class="section--alt" id="gallery">
-  <div class="section__inner">
-    <div class="section__eyebrow">Кабинет и процедуры</div>
-    <h2 class="section__title">Как это выглядит</h2>
-    <p class="section__sub">Фото с карточки на Яндекс Картах: кабинет, работа и ориентир у входа.</p>
-    <div class="gallery-grid">
-      <div class="gallery-item gallery-item--wide">
-        <img src="assets/web/product-1.jpg" alt="Процедура фракционной мезотерапии" width="1000" height="546">
-      </div>
-      <div class="gallery-item">
-        <img src="assets/web/product-2.jpg" alt="Процедура ухода за лицом" width="1000" height="546">
-      </div>
-      <div class="gallery-item">
-        <img src="assets/web/product-3.jpg" alt="Косметологическая процедура" width="1000" height="546">
-      </div>
-      <div class="gallery-item">
-        <img src="assets/web/photo-work.jpg" alt="Здание у Шараповского проезда, вл2с3" width="1280" height="750">
-      </div>
-      <div class="gallery-item">
-        <img src="assets/web/photo-promo.jpg" alt="Косметолог Бродская — материалы с карточки" width="1280" height="698">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="why">
-  <div class="section__eyebrow">Почему ко мне</div>
-  <h2 class="section__title">Спокойно, понятно, без давления</h2>
-  <p class="section__sub">Без навязанного курса и без «процедуры наугад» — то, чего часто не хватает после жёсткого или непонятного опыта.</p>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-card__icon">✓</div>
-      <div class="why-card__title">Анамнез до процедуры</div>
-      <div class="why-card__text">Противопоказания, аллергии, что уже пробовали — чтобы не угадывать с кожей.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-card__icon">✓</div>
-      <div class="why-card__title">Бережная техника</div>
-      <div class="why-card__text">Чистки и пилинги без лишней травмы: краснота уходит быстро, результат заметен.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-card__icon">✓</div>
-      <div class="why-card__title">Объясняю «зачем»</div>
-      <div class="why-card__text">Что делаем и почему — можно спрашивать по ходу, без стыда «я не разбираюсь».</div>
-    </div>
-    <div class="why-card">
-      <div class="why-card__icon">✓</div>
-      <div class="why-card__title">Уход домой</div>
-      <div class="why-card__text">Рекомендации и список средств под вашу кожу — следующий шаг после визита понятен.</div>
-    </div>
-  </div>
-</section>
-
-<section class="section--alt" id="how">
-  <div class="section__inner">
-    <div class="section__eyebrow">Как записаться</div>
-    <h2 class="section__title">Три шага — сначала разбор, потом время</h2>
-    <p class="section__sub">Кабинет в бьюти-коворкинге: свободные окна зависят от площадки. Написать в мессенджер проще и надёжнее, чем чужой онлайн-календарь.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-card__n">1</div>
-        <div class="step-card__title">Опишите задачу или выберите процедуру</div>
-        <div class="step-card__text">Кнопка подставит текст сообщения — можно коротко написать, что беспокоит кожу.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-card__n">2</div>
-        <div class="step-card__title">Напишите в WhatsApp или Telegram</div>
-        <div class="step-card__text">Отвечу на вопросы до визита и предложу свободные окна.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-card__n">3</div>
-        <div class="step-card__title">Приходите в Мытищи</div>
-        <div class="step-card__text">Шараповский проезд, вл2с3 — рядом со станцией Мытищи.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="reviews">
-  <div class="section__eyebrow">Отзывы</div>
-  <h2 class="section__title">Говорят клиенты</h2>
-  <div class="rating-row">
-    <div class="rating-pill">
-      <div class="rating-pill__score">4,9</div>
-      <div class="rating-pill__meta">Яндекс Карты<br>28+ отзывов</div>
-    </div>
-  </div>
-  <div class="reviews-grid">
-    <article class="review">
-      <div class="review__top">
-        <div class="review__name">Татьяна К.</div>
-        <div class="review__date">24 окт</div>
-      </div>
-      <div class="review__stars">★★★★★</div>
-      <p class="review__text">Делала терапевтическую чистку у Анны. Перед процедурой подробно собрала анамнез. Чистка бережная: без сильной болезненности, краснота сошла на следующий день. Поры чище, кожа ухоженная. Дала рекомендации по уходу. Пройду курс и приведу ребёнка.</p>
-    </article>
-    <article class="review">
-      <div class="review__top">
-        <div class="review__name">Арзу Ш.</div>
-        <div class="review__date">25 сен</div>
-      </div>
-      <div class="review__stars">★★★★★</div>
-      <p class="review__text">Самый лучший косметолог. Приходила на терапевтическую чистку — уже ко второму приёму не было таких бугорков, тон стал лучше ложиться, состояние кожи улучшилось. Точно рекомендую.</p>
-    </article>
-    <article class="review">
-      <div class="review__top">
-        <div class="review__name">Анастасия Г.</div>
-        <div class="review__date">25 янв</div>
-      </div>
-      <div class="review__stars">★★★★★</div>
-      <p class="review__text">Первый опыт у косметолога — очень довольна. Чистка, пилинги. Грамотный специалист: всё рассказывает, для чего и почему. Кожа стала намного лучше, подсказывает косметику под мои проблемы.</p>
-    </article>
-    <article class="review">
-      <div class="review__top">
-        <div class="review__name">Наталья Х.</div>
-        <div class="review__date">4 ноя</div>
-      </div>
-      <div class="review__stars">★★★★★</div>
-      <p class="review__text">Анна — чудесный человек и мастер своего дела. Сейчас сложно найти специалиста, который относится к работе с любовью. Рекомендую!</p>
-    </article>
-  </div>
-  <p class="reviews-note">
-    Подборка с Яндекс Карт.
-    <a href="https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/" target="_blank" rel="noopener">Смотреть все отзывы →</a>
-  </p>
-</section>
-
-<section class="section--alt" id="faq">
-  <div class="section__inner">
-    <div class="section__eyebrow">FAQ</div>
-    <h2 class="section__title">Частые вопросы</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>Кому это подходит?</summary>
-        <div class="faq-item__body">Если кожа беспокоит (высыпания, поры, тусклый тон), нужен первый спокойный визит или прошлый опыт был жёстким и непонятным. Работаю с женщинами, мужчинами и подростками от 11–12 лет — протокол под задачу кожи.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Вы врач-косметолог?</summary>
-        <div class="faq-item__body">Я практикующий косметолог. Сейчас дополнительно получаю медицинское образование — чтобы глубже понимать физику и биохимию процессов кожи и осознаннее выбирать протокол. Это не замена врачебному приёму при заболеваниях кожи.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Как записаться?</summary>
-        <div class="faq-item__body">Выберите процедуру на сайте или напишите, что беспокоит — в WhatsApp или Telegram уйдёт готовый текст. Дату и время согласуем в переписке.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Почему нет онлайн-календаря?</summary>
-        <div class="faq-item__body">Кабинет в бьюти-коворкинге: слоты зависят от расписания площадки. Запись через мессенджер надёжнее, чем интеграция с чужой системой бронирования.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Где вы находитесь?</summary>
-        <div class="faq-item__body">Московская область, Мытищи, Шараповский проезд, вл2с3. Ориентир — станция Мытищи.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band" id="contacts">
-  <div class="cta-card">
-    <div>
-      <div class="cta-card__eyebrow">Запись</div>
-      <h2>Напишите — разберём задачу кожи и подберём время</h2>
-      <p>Коротко опишите, что беспокоит, или выберите процедуру выше. Отвечу в WhatsApp или Telegram и предложу свободные окна.</p>
-      <div class="contact-lines">
-        <div class="contact-line"><b>Телефон / WhatsApp:</b> <a href="tel:+79262673385">+7 (926) 267-33-85</a></div>
-        <div class="contact-line"><b>Адрес:</b> Мытищи, Шараповский пр., вл2с3</div>
-        <div class="contact-line"><b>Соцсети:</b>
-          <a id="cta-ig" href="#" target="_blank" rel="noopener">Instagram</a> ·
-          <a id="cta-tg-channel" href="#" target="_blank" rel="noopener">Telegram-канал</a>
-        </div>
-      </div>
-    </div>
-    <div class="cta-card__actions">
-      <button type="button" class="btn-wa" data-book="разбор задачи кожи / подбор процедуры">Записаться в WhatsApp</button>
-      <button type="button" class="btn-tg" data-book="разбор задачи кожи / подбор процедуры">Записаться в Telegram</button>
-      <a class="btn-primary" href="https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/" target="_blank" rel="noopener">Открыть на карте →</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <img src="assets/web/logo.png" alt="">
-      Косметолог Бродская
-    </div>
-    <div class="footer__meta">Мытищи · косметология</div>
-    <div class="footer__links">
-      <a id="foot-ig" href="#" target="_blank" rel="noopener">Instagram</a>
-      <a id="foot-tg" href="#" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://wa.me/79262673385" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
-</footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<div class="modal-backdrop" id="book-modal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-labelledby="book-title">
-    <div class="modal__title" id="book-title">Запись</div>
-    <p class="modal__sub">Выберите мессенджер — текст заявки уже готов.</p>
-    <div class="modal__preview" id="book-preview"></div>
-    <div class="modal__actions">
-      <button type="button" class="btn-wa" id="book-wa">Открыть WhatsApp</button>
-      <button type="button" class="btn-tg" id="book-tg">Открыть Telegram</button>
-      <button type="button" class="modal__close" id="book-close">Закрыть</button>
-    </div>
-  </div>
+  <div class="bar__note">По умолчанию — B</div>
 </div>
-
+<div class="frame-wrap" id="frame-wrap" hidden>
+  <iframe id="frame" title="Превью лендинга"></iframe>
+</div>
+<div class="hub" id="hub">
+  <h1>Две версии лендинга</h1>
+  <p>Выберите вариант для просмотра. Переключатель сверху останется на обеих страницах превью.</p>
+  <div class="cards">
+    <a class="card card--default" href="?v=b">
+      <div class="card__kicker">Версия B · по умолчанию</div>
+      <h2>Сегмент E, упрощённый</h2>
+      <p>Протокол после неудачного опыта. Короче: ≤3 тезиса в блоке, простые формулировки.</p>
+    </a>
+    <a class="card" href="?v=a">
+      <div class="card__kicker">Версия A</div>
+      <h2>Бережно + анамнез</h2>
+      <p>Предыдущий продающий лендинг (AJTBD) — до большой перестройки под сегмент E.</p>
+    </a>
+  </div>
+  <p class="hint">Прямые ссылки: <a href="v-b/">/v-b/</a> · <a href="v-a/">/v-a/</a></p>
+</div>
 <script>
-/** CONFIG — подставьте ссылки перед публикацией */
-const CONFIG = {
-  phoneE164: "79262673385",
-  tgUsername: "",   // TODO: username без @ для личной записи
-  tgChannel: "",    // TODO: https://t.me/...
-  instagram: "",    // TODO: https://instagram.com/...
-  yandexOrg: "https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/"
-};
+(function () {
+  var params = new URLSearchParams(location.search);
+  var v = (params.get('v') || 'b').toLowerCase();
+  if (v !== 'a' && v !== 'b') v = 'b';
+  var tabA = document.getElementById('tab-a');
+  var tabB = document.getElementById('tab-b');
+  var hub = document.getElementById('hub');
+  var wrap = document.getElementById('frame-wrap');
+  var frame = document.getElementById('frame');
 
-const SERVICES = [
-  {
-    id: "chistka", num: "01",
-    title: "Чистка лица с терапевтическим эффектом",
-    desc: "Глубокое очищение с заботой о коже: анамнез, бережная техника, рекомендации по уходу.",
-    price: "цена по запросу", focus: true, badge: "Чаще всего"
-  },
-  {
-    id: "coral", num: "02",
-    title: "Коралловый биологический пилинг",
-    desc: "Мягкое обновление рельефа и тона без жёсткой агрессии к коже.",
-    price: "5 000 ₽"
-  },
-  {
-    id: "mid-peel", num: "03",
-    title: "Срединный пилинг",
-    desc: "Для выраженного обновления: пигмент, тусклость, неровный рельеф — по показаниям.",
-    price: "5 000 ₽"
-  },
-  {
-    id: "surface-peel", num: "04",
-    title: "Поверхностный пилинг",
-    desc: "Лёгкое обновление и сияние — удобный старт курса или поддержка между процедурами.",
-    price: "цена по запросу"
-  },
-  {
-    id: "carboxy", num: "05",
-    title: "Карбокситерапия",
-    desc: "Насыщение кожи CO₂: тон, микроциркуляция, восстановление после нагрузок на кожу.",
-    price: "цена по запросу"
-  },
-  {
-    id: "frac-carboxy", num: "06",
-    title: "Фракционная карбокситерапия",
-    desc: "Точечная работа с проблемными зонами — когда нужен более прицельный эффект.",
-    price: "цена по запросу"
-  },
-  {
-    id: "frac-meso", num: "07",
-    title: "Фракционная мезотерапия",
-    desc: "Доставка активов в кожу фракционным методом — курс обсуждаем на консультации.",
-    price: "цена по запросу"
+  // Always show iframe when ?v= present OR default to B embedded
+  var embed = params.has('v') || location.hash === '#preview' || true;
+  if (embed) {
+    hub.hidden = true;
+    wrap.hidden = false;
+    frame.src = (v === 'a' ? 'v-a/' : 'v-b/') + 'index.html';
+    tabA.classList.toggle('is-active', v === 'a');
+    tabB.classList.toggle('is-active', v === 'b');
+    document.title = (v === 'a' ? 'Версия A' : 'Версия B') + ' · Косметолог Бродская';
   }
-];
-
-function bookingText(serviceTitle) {
-  return "Здравствуйте, Анна! Хочу записаться на «" + serviceTitle + "». Подскажите, пожалуйста, ближайшие свободные окна.";
-}
-function waUrl(text) {
-  return "https://wa.me/" + CONFIG.phoneE164 + "?text=" + encodeURIComponent(text);
-}
-function tgChatUrl() {
-  if (!CONFIG.tgUsername) return null;
-  return "https://t.me/" + CONFIG.tgUsername.replace(/^@/, "");
-}
-function showToast(msg) {
-  const el = document.getElementById("toast");
-  el.textContent = msg;
-  el.classList.add("toast--show");
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(function () { el.classList.remove("toast--show"); }, 2800);
-}
-async function copyText(text) {
-  try { await navigator.clipboard.writeText(text); return true; }
-  catch (e) { return false; }
-}
-function openWhatsApp(serviceTitle) {
-  window.open(waUrl(bookingText(serviceTitle)), "_blank", "noopener");
-}
-async function openTelegram(serviceTitle) {
-  const text = bookingText(serviceTitle);
-  const url = tgChatUrl();
-  const copied = await copyText(text);
-  if (!url) {
-    showToast(copied
-      ? "Текст скопирован. Укажите tgUsername в CONFIG"
-      : "Укажите Telegram @username в CONFIG (см. README)");
-    return;
-  }
-  window.open(url, "_blank", "noopener");
-  showToast(copied
-    ? "Текст скопирован — вставьте в чат (Telegram не подставляет текст в личку)"
-    : "Открыт Telegram — вставьте текст заявки вручную");
-}
-function openBookModal(serviceTitle) {
-  document.getElementById("book-title").textContent = "Запись: " + serviceTitle;
-  document.getElementById("book-preview").textContent = bookingText(serviceTitle);
-  const modal = document.getElementById("book-modal");
-  modal.classList.add("modal-backdrop--open");
-  modal.setAttribute("aria-hidden", "false");
-  document.getElementById("book-wa").onclick = function () { openWhatsApp(serviceTitle); };
-  document.getElementById("book-tg").onclick = function () { openTelegram(serviceTitle); };
-}
-function closeBookModal() {
-  const modal = document.getElementById("book-modal");
-  modal.classList.remove("modal-backdrop--open");
-  modal.setAttribute("aria-hidden", "true");
-}
-function renderServices() {
-  document.getElementById("services-grid").innerHTML = SERVICES.map(function (s) {
-    return '<article class="service' + (s.focus ? " service--focus" : "") + '">' +
-      (s.badge ? '<div class="service__badge">' + s.badge + "</div>" : "") +
-      '<div class="service__num">' + s.num + "</div>" +
-      '<div class="service__title">' + s.title + "</div>" +
-      '<div class="service__desc">' + s.desc + "</div>" +
-      '<div class="service__meta">' +
-        '<div class="service__price">' + s.price + "</div>" +
-        '<div class="service__unit">' + (s.price.indexOf("₽") >= 0 ? "за процедуру" : "уточняется при записи") + "</div>" +
-      "</div>" +
-      '<div class="service__actions">' +
-        '<button type="button" class="btn-wa" data-book="' + s.title.replace(/"/g, "&quot;") + '">WhatsApp</button>' +
-        '<button type="button" class="btn-tg" data-book="' + s.title.replace(/"/g, "&quot;") + '">Telegram</button>' +
-      "</div></article>";
-  }).join("");
-}
-function wireSocial() {
-  const ig = CONFIG.instagram || "#";
-  const tgCh = CONFIG.tgChannel || "#";
-  ["nav-ig", "cta-ig", "foot-ig"].forEach(function (id) {
-    const a = document.getElementById(id); if (!a) return;
-    a.href = ig;
-    if (!CONFIG.instagram) a.addEventListener("click", function (e) {
-      e.preventDefault(); showToast("Подставьте ссылку Instagram в CONFIG.instagram");
-    });
-  });
-  ["nav-tg-channel", "cta-tg-channel", "foot-tg"].forEach(function (id) {
-    const a = document.getElementById(id); if (!a) return;
-    a.href = tgCh;
-    if (!CONFIG.tgChannel) a.addEventListener("click", function (e) {
-      e.preventDefault(); showToast("Подставьте ссылку Telegram-канала в CONFIG.tgChannel");
-    });
-  });
-}
-document.addEventListener("DOMContentLoaded", function () {
-  renderServices(); wireSocial();
-  document.body.addEventListener("click", function (e) {
-    const btn = e.target.closest("[data-book]");
-    if (!btn) return;
-    e.preventDefault();
-    openBookModal(btn.getAttribute("data-book"));
-  });
-  document.getElementById("book-close").addEventListener("click", closeBookModal);
-  document.getElementById("book-modal").addEventListener("click", function (e) {
-    if (e.target === e.currentTarget) closeBookModal();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeBookModal();
-  });
-});
+})();
 </script>
 </body>
 </html>
