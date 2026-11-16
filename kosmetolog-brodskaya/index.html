@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Косметолог Бродская — превью A/B</title>
+<title>Косметолог Бродская — превью A/B/C/D</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#F2F3F7">
 <link rel="icon" href="assets/web/logo-mark.png" type="image/png">
@@ -47,13 +47,13 @@ body {
 }
 .bar__note { font-size: 12px; color: var(--ink-3); }
 .switch {
-  display: inline-flex; padding: 3px;
+  display: inline-flex; padding: 3px; flex-wrap: wrap;
   background: var(--bg); border: 1px solid var(--line); border-radius: 999px; gap: 2px;
 }
 .switch a {
   text-decoration: none; color: var(--ink-2);
   font-size: 13px; font-weight: 600;
-  padding: 8px 14px; border-radius: 999px;
+  padding: 8px 12px; border-radius: 999px;
 }
 .switch a.is-active {
   background: var(--ink); color: #fff;
@@ -64,7 +64,7 @@ iframe {
   width: 100%; height: 100%; border: 0; display: block; background: var(--bg);
 }
 .hub {
-  max-width: 720px; margin: 48px auto; padding: 0 20px 60px;
+  max-width: 920px; margin: 48px auto; padding: 0 20px 60px;
 }
 .hub h1 { font-size: 28px; letter-spacing: -0.6px; margin-bottom: 10px; }
 .hub p { color: var(--ink-2); line-height: 1.55; margin-bottom: 22px; }
@@ -87,11 +87,13 @@ iframe {
 <div class="bar">
   <div class="bar__brand">
     <img src="assets/web/logo.png" alt="">
-    Превью для ОС · A / B
+    Превью для ОС · A / B / C / D
   </div>
   <div class="switch" role="tablist" aria-label="Версия лендинга">
-    <a href="?v=a" id="tab-a" class="is-active">Версия A · бережно</a>
-    <a href="?v=b" id="tab-b">Версия B · протокол</a>
+    <a href="?v=a" id="tab-a" class="is-active">A · бережно</a>
+    <a href="?v=b" id="tab-b">B · протокол</a>
+    <a href="?v=c" id="tab-c">C · эксперт</a>
+    <a href="?v=d" id="tab-d">D · без страха</a>
   </div>
   <div class="bar__note">По умолчанию — A</div>
 </div>
@@ -99,43 +101,55 @@ iframe {
   <iframe id="frame" title="Превью лендинга"></iframe>
 </div>
 <div class="hub" id="hub">
-  <h1>Две версии лендинга</h1>
-  <p>Выберите вариант для просмотра. Переключатель сверху останется на обеих страницах превью.</p>
+  <h1>Четыре версии лендинга</h1>
+  <p>A/B — прежние. C/D — на Higgsfield-концептах и брендбуке: разное позиционирование.</p>
   <div class="cards">
     <a class="card card--default" href="?v=a">
       <div class="card__kicker">Версия A · по умолчанию</div>
       <h2>Бережно + анамнез</h2>
-      <p>Предыдущий продающий лендинг (AJTBD) — до большой перестройки под сегмент E.</p>
+      <p>AJTBD до перестройки под сегмент E. Серый минимализм.</p>
     </a>
     <a class="card" href="?v=b">
       <div class="card__kicker">Версия B</div>
       <h2>Сегмент E, упрощённый</h2>
-      <p>Ядро: медобразование → протокол, не прайс. Сегмент E после неудачного опыта.</p>
+      <p>Медобразование → протокол, не прайс. Структура E.</p>
+    </a>
+    <a class="card" href="?v=c">
+      <div class="card__kicker">Версия C · brand</div>
+      <h2>Protocol / Expert</h2>
+      <p>Сильнее тезис протокола. Бумага / шалфей / глина.</p>
+    </a>
+    <a class="card" href="?v=d">
+      <div class="card__kicker">Версия D · brand</div>
+      <h2>Gentle Trust</h2>
+      <p>Бережный уход и результат без страха. Ivory / dusty rose.</p>
     </a>
   </div>
-  <p class="hint">Прямые ссылки: <a href="v-a/">/v-a/</a> · <a href="v-b/">/v-b/</a></p>
+  <p class="hint">Прямые ссылки: <a href="v-a/">/v-a/</a> · <a href="v-b/">/v-b/</a> · <a href="v-c/">/v-c/</a> · <a href="v-d/">/v-d/</a></p>
 </div>
 <script>
 (function () {
   var params = new URLSearchParams(location.search);
   var v = (params.get('v') || 'a').toLowerCase();
-  if (v !== 'a' && v !== 'b') v = 'a';
-  var tabA = document.getElementById('tab-a');
-  var tabB = document.getElementById('tab-b');
+  if (['a','b','c','d'].indexOf(v) < 0) v = 'a';
   var hub = document.getElementById('hub');
   var wrap = document.getElementById('frame-wrap');
   var frame = document.getElementById('frame');
+  var titles = {
+    a: 'Версия A · бережно',
+    b: 'Версия B · протокол',
+    c: 'Версия C · эксперт',
+    d: 'Версия D · без страха'
+  };
 
-  // Always show iframe when ?v= present OR default to A embedded
-  var embed = params.has('v') || location.hash === '#preview' || true;
-  if (embed) {
-    hub.hidden = true;
-    wrap.hidden = false;
-    frame.src = (v === 'a' ? 'v-a/' : 'v-b/') + 'index.html';
-    tabA.classList.toggle('is-active', v === 'a');
-    tabB.classList.toggle('is-active', v === 'b');
-    document.title = (v === 'a' ? 'Версия A' : 'Версия B') + ' · Косметолог Бродская';
-  }
+  hub.hidden = true;
+  wrap.hidden = false;
+  frame.src = 'v-' + v + '/index.html';
+  ['a','b','c','d'].forEach(function (key) {
+    var tab = document.getElementById('tab-' + key);
+    if (tab) tab.classList.toggle('is-active', v === key);
+  });
+  document.title = titles[v] + ' · Косметолог Бродская';
 })();
 </script>
 </body>

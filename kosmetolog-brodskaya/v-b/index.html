@@ -693,12 +693,24 @@ img { max-width: 100%; display: block; }
 .ab-chip a.is-on { opacity: 1; background: #B76E79; }
 .ab-chip a:hover { opacity: 1; }
 
+
+
+.gift-card {
+  margin-top: 8px; border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid var(--line);
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.gift-card img { display:block; width:100%; height:auto; }
+
 </style>
 </head>
 <body>
 <div class="ab-chip" aria-label="Переключатель версий">
-  <a class="" href="../?v=a">A</a>
+  <a href="../?v=a">A</a>
   <a class="is-on" href="../?v=b">B</a>
+  <a href="../?v=c">C</a>
+  <a href="../?v=d">D</a>
   <a href="../">Hub</a>
 </div>
 
@@ -951,6 +963,19 @@ img { max-width: 100%; display: block; }
       <div class="step-card__title">Приходите в Мытищи</div>
       <div class="step-card__text">Шараповский пр., вл2с3 · рядом со станцией Мытищи.</div>
     </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="gift">
+  <div class="section__eyebrow">Для курса</div>
+  <h2 class="section__title">5-я процедура — в подарок</h2>
+  <p class="section__sub">Тихий бонус при курсе: без кричащих баннеров. Условия уточним в переписке.</p>
+  <div class="gift-card">
+    <img src="../assets/web/photo-promo.jpg" alt="5-я процедура в подарок — Косметолог Бродская" width="1400" height="781">
   </div>
 </section>
 

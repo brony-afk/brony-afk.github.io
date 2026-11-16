@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Косметолог Бродская — протокол (C)</title>
+<meta name="description" content="Медицинское образование — чтобы собирать протокол, а не выбирать из прайса. Мытищи. Запись в WhatsApp. Рейтинг 4,9.">
+<meta name="theme-color" content="#F3EEE6">
+<link rel="icon" href="../assets/web/logo-mark.png" type="image/png">
+
+<!--
+  Стиль: «Минимализм с А» (композиция как landing-v4-fakedoor-alfa.html)
+  Акцент: глина #B4553A; фон бумага #F3EEE6; шалфей на section--alt.
+  Версия C: ветка Protocol/Expert — сильнее тезис «медобразование → протокол»; визуал paper/sage/clay из brandbook.
+  Рекомендации: rekomendacii-landing-brodskaya-v1.md (локально, не публиковать).
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --ink: #1C1917;
+    --ink-2: #57534E;
+    --ink-3: #78716C;
+    --mute: #A8A29E;
+    --line: #E7E0D6;
+    --line-soft: #EFE8DE;
+    --bg: #F3EEE6;
+    --bg-card: #FFFEFB;
+    --bg-soft: #EFE9E0;
+    --accent: #B4553A;
+    --accent-dark: #8F3F2A;
+    --accent-soft: #F0E4DE;
+    --lavender: #9B7BB0;
+    --sage: #DDE3D6;
+    --success: #1FA85B;
+    --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
+    --shadow: 0 2px 12px rgba(28, 25, 23, 0.05);
+    --shadow-lg: 0 4px 24px rgba(28, 25, 23, 0.07);
+    --radius-lg: 18px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --radius-chip: 8px;
+    --radius-pill: 999px;
+    --font: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --mono: 'Menlo', 'Consolas', 'Monaco', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+
+.nav {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--line-soft);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+.nav__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 12px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+.nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+}
+.nav__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid var(--line-soft);
+}
+.nav__links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.nav__link {
+    font-size: 13.5px;
+    color: var(--ink-3);
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+.nav__link:hover { color: var(--ink); }
+.nav__link--active { color: var(--ink); border-bottom-color: var(--accent); }
+.nav__cta {
+    display: inline-flex;
+    padding: 8px 16px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+}
+.nav__social { display: flex; gap: 8px; align-items: center; }
+.nav__social a.soc {
+    width: 32px; height: 32px; border-radius: 8px;
+    border: 1px solid var(--line);
+    display: none; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--ink-2);
+}
+.nav__social a.soc.is-visible { display: inline-flex; }
+.nav__social a.soc:hover { border-color: var(--ink); color: var(--ink); }
+
+.hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 28px 12px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 28px;
+    align-items: center;
+}
+.hero__copy { text-align: left; }
+.status-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-sm);
+}
+.status-badge__dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
+.status-badge__text {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.6px;
+    text-transform: uppercase; color: var(--ink-3);
+}
+.hero__eyebrow {
+    margin-top: 18px;
+    font-size: 11.5px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+    font-family: var(--display);
+    font-size: 34px; font-weight: 700; line-height: 1.18;
+    letter-spacing: -1px; margin-top: 10px; max-width: 560px;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero__sub {
+    font-size: 15.5px; line-height: 25px; color: var(--ink-2);
+    max-width: 500px; margin-top: 14px;
+}
+.hero__cta-row {
+    display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;
+}
+.btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; background: var(--ink); color: #fff;
+    font-size: 14px; font-weight: 600; border-radius: var(--radius-pill);
+}
+.btn-primary:hover { background: #000; }
+.btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; background: var(--bg-card); color: var(--ink);
+    font-size: 14px; font-weight: 500; border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+}
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-wa, .btn-tg {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; color: #fff; font-size: 13px; font-weight: 600;
+    border-radius: var(--radius-pill);
+}
+.btn-wa { background: #25D366; }
+.btn-tg { background: #229ED9; }
+.btn-wa:hover, .btn-tg:hover { filter: brightness(0.96); }
+
+.hero__trust {
+    margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap;
+}
+.trust-chip {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+    letter-spacing: 0.5px; text-transform: uppercase;
+}
+.trust-chip::before {
+    content: "•"; color: var(--accent); margin-right: 6px; font-size: 14px;
+}
+
+.hero__visual {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-card);
+    min-height: 360px;
+}
+.hero__visual img {
+    width: 100%; height: 100%; object-fit: cover; min-height: 360px;
+}
+.hero__badge {
+    position: absolute; left: 16px; bottom: 16px;
+    background: rgba(255,255,255,0.94);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    box-shadow: var(--shadow);
+    max-width: 240px;
+}
+.hero__badge strong { display: block; font-size: 14px; letter-spacing: -0.2px; }
+.hero__badge span {
+    font-family: var(--mono); font-size: 10.5px; color: var(--ink-3);
+    letter-spacing: 0.4px; text-transform: uppercase;
+}
+
+.section { max-width: 1180px; margin: 0 auto; padding: 48px 28px; }
+.section--alt { background: var(--bg-card); max-width: none; padding: 56px 28px; }
+.section--alt .section__inner { max-width: 1180px; margin: 0 auto; }
+.section__eyebrow {
+    font-size: 11.5px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase; text-align: center;
+}
+.section__eyebrow--left { text-align: left; }
+.section__title {
+    font-family: var(--display);
+    font-size: 28px; font-weight: 700; letter-spacing: -0.7px;
+    text-align: center; margin-top: 10px;
+}
+.section__title--left { text-align: left; }
+.section__sub {
+    text-align: center; font-size: 15px; color: var(--ink-2);
+    max-width: 560px; margin: 12px auto 0; line-height: 1.55;
+}
+.section__sub--left { text-align: left; margin-left: 0; margin-right: 0; }
+.section__note {
+    text-align: center; font-size: 13px; color: var(--ink-3);
+    max-width: 640px; margin: 16px auto 0; line-height: 1.5;
+}
+
+.situations {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-top: 32px;
+}
+.situation {
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 18px 18px 16px;
+}
+.situation__mark {
+    font-family: var(--mono); font-size: 10.5px; color: var(--accent-dark);
+    letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700;
+}
+.situation__text {
+    margin-top: 8px; font-size: 14.5px; color: var(--ink); line-height: 1.45;
+}
+
+.protocol-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: 32px;
+}
+.protocol-step {
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 20px 16px;
+}
+.protocol-step__n {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.55px;
+    color: var(--accent-dark); text-transform: uppercase; font-weight: 700;
+}
+.protocol-step__title {
+    font-size: 15px; font-weight: 700; margin-top: 10px; letter-spacing: -0.3px;
+}
+.protocol-step__text {
+    font-size: 13px; color: var(--ink-2); margin-top: 8px; line-height: 1.45;
+}
+
+.doc-frame {
+    margin-top: 28px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px 22px 18px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.doc-frame__label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.55px;
+    text-transform: uppercase; color: var(--mute); font-weight: 700;
+}
+.doc-frame__title {
+    font-size: 16px; font-weight: 700; margin-top: 8px; letter-spacing: -0.3px;
+}
+.doc-frame dl { margin-top: 14px; display: grid; gap: 10px; }
+.doc-frame dt {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.45px;
+    text-transform: uppercase; color: var(--accent-dark); font-weight: 700;
+}
+.doc-frame dd { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; margin-top: 2px; }
+.doc-frame__foot {
+    margin-top: 14px; font-size: 12.5px; color: var(--ink-3); line-height: 1.45;
+}
+
+.compare-wrap { margin-top: 28px; overflow-x: auto; }
+.compare {
+    width: 100%; border-collapse: collapse; min-width: 560px;
+    background: var(--bg); border-radius: var(--radius-md); overflow: hidden;
+}
+.compare th, .compare td {
+    text-align: left; padding: 14px 16px; font-size: 13.5px;
+    border-bottom: 1px solid var(--line-soft); vertical-align: top; line-height: 1.45;
+}
+.compare th {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.45px;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 700;
+    background: var(--bg-soft);
+}
+.compare td:first-child {
+    font-weight: 600; color: var(--ink); width: 18%; white-space: nowrap;
+}
+.compare td:nth-child(3) { color: var(--ink); }
+.compare tr:last-child td { border-bottom: none; }
+
+.cost-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin-top: 28px;
+}
+.cost-card {
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 22px 20px;
+}
+.cost-card__n {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px;
+    text-transform: uppercase; color: var(--accent-dark); font-weight: 700;
+}
+.cost-card__title { font-size: 17px; font-weight: 700; margin-top: 8px; letter-spacing: -0.3px; }
+.cost-card__price {
+    margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--ink);
+}
+.cost-card__text { font-size: 13.5px; color: var(--ink-2); margin-top: 10px; line-height: 1.5; }
+.cost-list {
+    margin-top: 22px; max-width: 720px; margin-left: auto; margin-right: auto;
+    display: grid; gap: 8px;
+}
+.cost-list li {
+    list-style: none; font-size: 13.5px; color: var(--ink-2); line-height: 1.45;
+    padding-left: 14px; position: relative;
+}
+.cost-list li::before {
+    content: "—"; position: absolute; left: 0; color: var(--accent);
+}
+
+.safe-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-top: 28px;
+}
+.safe-card {
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 20px 18px;
+}
+.safe-card__title { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+.safe-card__text { font-size: 13px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    margin-top: 32px;
+    align-items: stretch;
+}
+.about-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--bg);
+    min-height: 320px;
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+.about-card {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 28px 26px;
+    border: 1px solid var(--line-soft);
+}
+.about-card h3 {
+    font-size: 22px; letter-spacing: -0.5px; font-weight: 700;
+}
+.about-card p { margin-top: 12px; color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+.about-points { margin-top: 18px; display: grid; gap: 10px; }
+.about-point {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 13.5px; color: var(--ink-2); line-height: 1.45;
+}
+.about-point i {
+    font-family: var(--mono); font-style: normal; font-size: 11px; font-weight: 700;
+    color: var(--accent-dark); flex-shrink: 0; margin-top: 2px; letter-spacing: 0.3px;
+}
+
+.services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 32px;
+}
+.service {
+    display: flex; flex-direction: column;
+    background: var(--bg-card); padding: 22px 20px 18px;
+    border-radius: var(--radius-md); box-shadow: var(--shadow);
+    border: 2px solid transparent;
+}
+.service:hover { box-shadow: var(--shadow-lg); border-color: var(--line); }
+.service--focus {
+    background: linear-gradient(180deg, var(--accent-soft) 0%, #fff 60%);
+    border-color: var(--accent);
+}
+.service__badge {
+    display: inline-flex; align-self: flex-start;
+    background: var(--accent); color: #fff;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.6px;
+    text-transform: uppercase; padding: 4px 10px; border-radius: var(--radius-pill);
+    margin-bottom: 12px; font-weight: 700;
+}
+.service__num {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.55px;
+    color: var(--mute); text-transform: uppercase; font-weight: 600;
+}
+.service--focus .service__num { color: var(--accent-dark); }
+.service__title {
+    font-size: 16px; font-weight: 700; line-height: 22px;
+    letter-spacing: -0.4px; margin-top: 8px; min-height: 44px;
+}
+.service__desc {
+    font-size: 12.5px; line-height: 19px; color: var(--ink-2);
+    margin-top: 10px; flex-grow: 1;
+}
+.service__meta { border-top: 1px solid var(--line-soft); margin-top: 16px; padding-top: 14px; }
+.service__price { font-size: 17px; font-weight: 700; letter-spacing: -0.4px; }
+.service__unit {
+    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
+    letter-spacing: 0.4px; text-transform: uppercase; margin-top: 2px;
+}
+.service__actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.service__actions .btn-wa, .service__actions .btn-tg { padding: 8px 12px; font-size: 12px; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 12px;
+    margin-top: 32px;
+}
+.gallery-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--bg);
+}
+.gallery-item--wide { grid-row: span 2; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.why-list {
+    max-width: 760px; margin: 32px auto 0; display: grid; gap: 18px;
+}
+.why-item {
+    display: grid; grid-template-columns: 56px 1fr; gap: 14px;
+    padding-bottom: 18px; border-bottom: 1px solid var(--line-soft);
+}
+.why-item:last-child { border-bottom: none; padding-bottom: 0; }
+.why-item__n {
+    font-family: var(--mono); font-size: 18px; font-weight: 700;
+    color: var(--accent); letter-spacing: -0.5px;
+}
+.why-item__title { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+.why-item__text { font-size: 14px; color: var(--ink-2); margin-top: 6px; line-height: 1.5; }
+
+.steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 32px;
+}
+.step-card {
+    background: var(--bg-card); border-radius: var(--radius-md);
+    box-shadow: var(--shadow); padding: 22px 20px;
+}
+.step-card__n {
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
+    color: var(--accent-dark); letter-spacing: 0.4px;
+}
+.step-card__title { font-size: 16px; font-weight: 700; margin-top: 12px; letter-spacing: -0.3px; }
+.step-card__text { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.5; }
+
+.parents-box {
+    margin-top: 28px; max-width: 760px; margin-left: auto; margin-right: auto;
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 24px 22px;
+}
+.parents-box p { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
+.parents-box ul { margin-top: 14px; display: grid; gap: 8px; }
+.parents-box li {
+    list-style: none; font-size: 13.5px; color: var(--ink-2); line-height: 1.45;
+    padding-left: 14px; position: relative;
+}
+.parents-box li::before {
+    content: "—"; position: absolute; left: 0; color: var(--accent);
+}
+
+.rating-row { display: flex; justify-content: center; margin-top: 24px; }
+.rating-pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: var(--radius-pill); padding: 10px 16px;
+}
+.rating-pill__score { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+.rating-pill__meta {
+    font-family: var(--mono); font-size: 10.5px; color: var(--ink-3);
+    letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.35;
+}
+.reviews-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 14px; margin-top: 28px;
+}
+.review {
+    background: var(--bg); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md); padding: 20px;
+}
+.review--lead {
+    grid-column: 1 / -1;
+    background: var(--bg-soft);
+}
+.review__top { display: flex; justify-content: space-between; gap: 12px; }
+.review__name { font-weight: 700; font-size: 14px; }
+.review__date {
+    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
+    text-transform: uppercase; letter-spacing: 0.4px;
+}
+.review__stars { color: var(--accent); font-size: 12px; letter-spacing: 1px; margin-top: 6px; }
+.review__text { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; margin-top: 10px; }
+.review--lead .review__text { font-size: 15px; color: var(--ink); }
+.reviews-note { text-align: center; margin-top: 18px; font-size: 12.5px; color: var(--ink-3); }
+.reviews-note a { color: var(--accent-dark); border-bottom: 1px solid var(--accent-soft); }
+
+.faq-list { max-width: 720px; margin: 28px auto 0; }
+.faq-item {
+    background: var(--bg-card); border-radius: var(--radius-md);
+    box-shadow: var(--shadow); margin-bottom: 10px; overflow: hidden;
+}
+.faq-item summary {
+    list-style: none; cursor: pointer; padding: 18px 20px;
+    font-weight: 600; font-size: 14.5px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: "+"; color: var(--accent); font-family: var(--mono);
+    font-size: 18px; font-weight: 700;
+}
+.faq-item[open] summary::after { content: "—"; }
+.faq-item__body { padding: 0 20px 18px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+
+.cta-band { max-width: 1180px; margin: 0 auto 48px; padding: 0 28px; }
+.cta-card {
+    background: var(--bg-card); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg); padding: 36px 32px;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center;
+}
+.cta-card__eyebrow {
+    font-size: 11.5px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+.cta-card h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.6px; margin-top: 8px; }
+.cta-card p { color: var(--ink-2); margin-top: 10px; font-size: 14.5px; line-height: 1.55; }
+.cta-card__actions { display: flex; flex-direction: column; gap: 10px; }
+.cta-card__actions .btn-wa,
+.cta-card__actions .btn-tg,
+.cta-card__actions .btn-primary { justify-content: center; width: 100%; }
+.contact-lines { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+.contact-line { font-size: 13.5px; color: var(--ink-2); }
+.contact-line b { color: var(--ink); font-weight: 600; }
+.contact-line a { border-bottom: 1px solid var(--line); }
+.contact-social.is-hidden { display: none; }
+
+.footer {
+    border-top: 1px solid var(--line-soft); background: var(--bg-card); padding: 28px;
+}
+.footer__inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
+}
+.footer__brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; }
+.footer__brand img {
+    width: 36px; height: 36px; border-radius: 8px; object-fit: cover;
+    border: 1px solid var(--line-soft);
+}
+.footer__meta {
+    font-family: var(--mono); font-size: 10.5px; color: var(--mute);
+    letter-spacing: 0.4px; text-transform: uppercase;
+}
+.footer__links { display: flex; gap: 14px; flex-wrap: wrap; }
+.footer__links a { font-size: 13px; color: var(--ink-3); }
+.footer__links a:hover { color: var(--ink); }
+.footer__links a.is-hidden { display: none; }
+
+.toast {
+    position: fixed; left: 50%; bottom: 24px;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: #fff; padding: 12px 18px;
+    border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;
+    opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+    z-index: 100; max-width: 90vw; text-align: center;
+}
+.toast--show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.modal-backdrop {
+    position: fixed; inset: 0; background: rgba(20, 22, 26, 0.4);
+    display: none; align-items: flex-end; justify-content: center;
+    z-index: 80; padding: 16px;
+}
+.modal-backdrop--open { display: flex; }
+.modal {
+    background: var(--bg-card); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg); width: min(420px, 100%);
+    padding: 24px 22px 20px;
+}
+.modal__title { font-size: 18px; font-weight: 700; letter-spacing: -0.4px; }
+.modal__sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; }
+.modal__preview {
+    margin-top: 14px; background: var(--bg-soft); border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm); padding: 12px 14px;
+    font-size: 13px; color: var(--ink-2); line-height: 1.45;
+}
+.modal__actions { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.modal__actions .btn-wa, .modal__actions .btn-tg, .modal__close {
+    justify-content: center; width: 100%;
+}
+.modal__close {
+    display: inline-flex; align-items: center; padding: 10px 16px;
+    color: var(--ink-3); font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero__copy { text-align: center; }
+    .hero h1, .hero__sub { margin-left: auto; margin-right: auto; }
+    .hero__cta-row, .hero__trust { justify-content: center; }
+    .protocol-steps { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .safe-grid { grid-template-columns: 1fr; }
+    .cost-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .gallery-item--wide { grid-row: auto; grid-column: span 2; min-height: 220px; }
+    .gallery-item { min-height: 180px; }
+    .cta-card { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+    .nav__links { display: none; }
+    .hero { padding: 28px 18px 8px; }
+    .hero h1 { font-size: 27px; }
+    .situations, .services-grid, .steps-grid, .reviews-grid, .protocol-steps { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item--wide { grid-column: auto; }
+    .section { padding: 40px 18px; }
+    .cta-band { padding: 0 18px; }
+    .nav__inner { padding: 10px 18px; }
+    .why-item { grid-template-columns: 40px 1fr; }
+    .review--lead { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .status-badge__dot { animation: none; }
+    html { scroll-behavior: auto; }
+}
+
+.ab-chip {
+  position: fixed; bottom: 16px; left: 16px; z-index: 80;
+  display: inline-flex; gap: 6px; align-items: center;
+  padding: 8px 12px; border-radius: 999px;
+  background: rgba(20,22,26,.92); color: #fff;
+  font: 600 12px/1 Inter, system-ui, sans-serif;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.ab-chip a { color: #fff; text-decoration: none; opacity: .7; padding: 4px 8px; border-radius: 999px; }
+.ab-chip a.is-on { opacity: 1; background: #B4553A; }
+.ab-chip a:hover { opacity: 1; }
+
+
+
+.gift-card {
+  margin-top: 8px; border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid var(--line);
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.gift-card img { display:block; width:100%; height:auto; }
+
+</style>
+</head>
+<body>
+<div class="ab-chip" aria-label="Переключатель версий">
+  <a href="../?v=a">A</a>
+  <a href="../?v=b">B</a>
+  <a class="is-on" href="../?v=c">C</a>
+  <a href="../?v=d">D</a>
+  <a href="../">Hub</a>
+</div>
+
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#">
+      <img class="nav__logo" src="../assets/web/logo.png" alt="Косметолог Бродская">
+      Косметолог Бродская
+    </a>
+    <div class="nav__links">
+      <a class="nav__link nav__link--active" href="#protocol">Протокол</a>
+      <a class="nav__link" href="#services">Процедуры</a>
+      <a class="nav__link" href="#about">Обо мне</a>
+      <a class="nav__link" href="#reviews">Отзывы</a>
+    </div>
+    <div class="nav__social">
+      <a class="soc" id="nav-ig" href="#" target="_blank" rel="noopener" title="Instagram">IG</a>
+      <a class="soc" id="nav-tg-channel" href="#" target="_blank" rel="noopener" title="Telegram-канал">TG</a>
+      <a class="nav__cta" href="#contacts" data-book="разбор кожи / индивидуальный протокол">Запись</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero__copy">
+    <div class="status-badge">
+      <span class="status-badge__dot"></span>
+      <span class="status-badge__text">Мытищи · запись в мессенджер</span>
+    </div>
+    <div class="hero__eyebrow">Косметолог Анна Бродская · Мытищи · медобразование</div>
+    <h1>Протокол под вашу кожу — не выбор «что подешевле из прайса»</h1>
+    <p class="hero__sub">
+      Медицинское образование помогает разобраться, что происходит, и собрать порядок: разбор → причина → этапы и уход. Особенно если стандартные процедуры не помогли или стало хуже.
+    </p>
+    <div class="hero__cta-row">
+      <a class="btn-primary" href="#contacts" data-book="разбор кожи / индивидуальный протокол">Записаться на разбор →</a>
+      <a class="btn-ghost" href="#protocol">Как собираем протокол →</a>
+    </div>
+    <div class="hero__trust">
+      <span class="trust-chip">Экспертный разбор</span>
+      <span class="trust-chip">4,9 на Яндекс Картах</span>
+      <span class="trust-chip">Шараповский пр., вл2с3</span>
+    </div>
+  </div>
+  <div class="hero__visual">
+    <img src="../assets/web/hero-cabinet.jpg" alt="Кабинет косметолога Бродской в Мытищах" width="1600" height="726">
+    <div class="hero__badge">
+      <strong>Разбор и протокол</strong>
+      <span>Кабинет в Мытищах · по записи</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="recognize">
+  <div class="section__eyebrow">Узнаёте себя?</div>
+  <h2 class="section__title">Когда прайс уже не помогает</h2>
+  <p class="section__sub">Тогда нужен разбор и протокол — не ещё одна процедура «как всем».</p>
+  <div class="situations">
+    <div class="situation">
+      <div class="situation__mark">01</div>
+      <p class="situation__text">После процедуры кожа стала хуже — воспаления, краснота, сухость.</p>
+    </div>
+    <div class="situation">
+      <div class="situation__mark">02</div>
+      <p class="situation__text">Прошли курс — а толку почти нет.</p>
+    </div>
+    <div class="situation">
+      <div class="situation__mark">03</div>
+      <p class="situation__text">Непонятно, что нужно: советы разные, выбирать наугад не хочется.</p>
+    </div>
+  </div>
+  <p class="section__note">Сильное воспаление или подозрение на болезнь кожи — сначала к дерматологу. Если нужен врач, скажу прямо.</p>
+</section>
+
+<section class="section--alt" id="protocol">
+  <div class="section__inner">
+    <div class="section__eyebrow">Индивидуальный протокол</div>
+    <h2 class="section__title">Как собираем протокол</h2>
+    <p class="section__sub">Четыре шага: от истории кожи до понятного порядка.</p>
+    <div class="protocol-steps">
+      <div class="protocol-step">
+        <div class="protocol-step__n">№ 01</div>
+        <div class="protocol-step__title">Разговор</div>
+        <div class="protocol-step__text">Что беспокоит, что уже пробовали, как кожа реагировала.</div>
+      </div>
+      <div class="protocol-step">
+        <div class="protocol-step__n">№ 02</div>
+        <div class="protocol-step__title">Осмотр</div>
+        <div class="protocol-step__text">Смотрим кожу сейчас — без спешки к «стандартной схеме».</div>
+      </div>
+      <div class="protocol-step">
+        <div class="protocol-step__n">№ 03</div>
+        <div class="protocol-step__title">Причина</div>
+        <div class="protocol-step__text">Объясняю, что вижу и почему такой путь — можно спрашивать.</div>
+      </div>
+      <div class="protocol-step">
+        <div class="protocol-step__n">№ 04</div>
+        <div class="protocol-step__title">Протокол</div>
+        <div class="protocol-step__text">Порядок, интервалы и уход дома. Если кожа реагирует иначе — корректируем.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compare">
+  <div class="section__eyebrow">Чем отличается</div>
+  <h2 class="section__title">Типовая процедура vs протокол</h2>
+  <div class="compare-wrap">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Типовая процедура</th>
+          <th>Протокол</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Начало</td>
+          <td>Выбор из списка</td>
+          <td>Разговор: что пробовали и как кожа ответила</td>
+        </tr>
+        <tr>
+          <td>Выбор</td>
+          <td>По названию услуги</td>
+          <td>По состоянию кожи и истории</td>
+        </tr>
+        <tr>
+          <td>Ход</td>
+          <td>Курс по схеме</td>
+          <td>Этапы с проверкой реакции, корректировка</td>
+        </tr>
+        <tr>
+          <td>После</td>
+          <td>Общие советы</td>
+          <td>Порядок и уход под вашу кожу</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section--alt" id="services">
+  <div class="section__inner">
+    <div class="section__eyebrow">Процедуры</div>
+    <h2 class="section__title">Инструменты протокола</h2>
+    <p class="section__sub">Не меню «наугад» — шаги после разбора. Если задача уже ясна — можно выбрать процедуру.</p>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+<div class="section__eyebrow">Стоимость</div>
+    <h2 class="section__title">Сначала разбор — потом процедуры</h2>
+    <div class="cost-grid">
+      <div class="cost-card">
+        <div class="cost-card__n">Этап 1</div>
+        <div class="cost-card__title">Разбор и протокол</div>
+        <div class="cost-card__price">Цена при записи</div>
+        <p class="cost-card__text">История кожи, осмотр, понятный порядок. Можно остановиться здесь.</p>
+      </div>
+      <div class="cost-card">
+        <div class="cost-card__n">Этап 2</div>
+        <div class="cost-card__title">Процедуры по протоколу</div>
+        <div class="cost-card__price">По выбранным процедурам</div>
+        <p class="cost-card__text">После первой скажу, нужен ли курс. Решение за вами.</p>
+      </div>
+    </div>
+    <ul class="cost-list">
+      <li>Точные суммы — в переписке. Без акций и «хитов».</li>
+    </ul>
+</section>
+
+<section class="section--alt" id="safe">
+  <div class="section__inner">
+    <div class="section__eyebrow">Безопасный старт</div>
+    <h2 class="section__title">Если кожа уже уязвима</h2>
+    <div class="safe-grid">
+      <div class="safe-card">
+        <div class="safe-card__title">Сначала понимание</div>
+        <p class="safe-card__text">В первый визит — разбор задачи, не агрессия «по умолчанию».</p>
+      </div>
+      <div class="safe-card">
+        <div class="safe-card__title">Мягкое начало</div>
+        <p class="safe-card__text">Если делаем процедуру — бережно и с понятными ориентирами.</p>
+      </div>
+      <div class="safe-card">
+        <div class="safe-card__title">Можно остановиться</div>
+        <p class="safe-card__text">Если кожа отреагировала — обсудим, что дальше. Между визитами можно написать.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+<div class="section__eyebrow">Обо мне</div>
+    <h2 class="section__title">Анна Бродская</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="../assets/web/photo-anna.jpg" alt="Косметолог Анна Бродская" width="540" height="864">
+      </div>
+      <div class="about-card">
+        <h3>Сначала понимаю кожу — потом подключаю процедуры</h3>
+        <p>Практикую с опорой на медобразование: разбираю, что происходит, собираю порядок и уход. Процедуры — инструменты протокола, не точка входа «из списка».</p>
+        <div class="about-points">
+          <div class="about-point"><i>01</i><span>Нужен дерматолог — скажу прямо</span></div>
+          <div class="about-point"><i>02</i><span>Кабинет в Мытищах — время в переписке</span></div>
+          <div class="about-point"><i>03</i><span>Можно спрашивать — без стыда «я не разбираюсь»</span></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section--alt" id="gallery">
+  <div class="section__inner">
+    <div class="section__eyebrow">Кабинет</div>
+    <h2 class="section__title">Как выглядит</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--wide">
+        <img src="../assets/web/product-1.jpg" alt="Рабочий процесс в кабинете" width="1000" height="546">
+      </div>
+      <div class="gallery-item">
+        <img src="../assets/web/product-2.jpg" alt="Процедура ухода за лицом" width="1000" height="546">
+      </div>
+      <div class="gallery-item">
+        <img src="../assets/web/photo-work.jpg" alt="Здание у Шараповского проезда" width="1280" height="750">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="section__eyebrow">Как записаться</div>
+  <h2 class="section__title">Три шага</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-card__n">№ 01</div>
+      <div class="step-card__title">Напишите</div>
+      <div class="step-card__text">Кратко: что беспокоит кожу — или выберите процедуру.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-card__n">№ 02</div>
+      <div class="step-card__title">WhatsApp или Telegram</div>
+      <div class="step-card__text">Обычно отвечаю в тот же день в рабочее время.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-card__n">№ 03</div>
+      <div class="step-card__title">Приходите в Мытищи</div>
+      <div class="step-card__text">Шараповский пр., вл2с3 · рядом со станцией Мытищи.</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="gift">
+  <div class="section__eyebrow">Для курса</div>
+  <h2 class="section__title">5-я процедура — в подарок</h2>
+  <p class="section__sub">Тихий бонус при курсе: без кричащих баннеров. Условия уточним в переписке.</p>
+  <div class="gift-card">
+    <img src="../assets/web/photo-promo.jpg" alt="5-я процедура в подарок — Косметолог Бродская" width="1400" height="781">
+  </div>
+</section>
+
+<section class="section--alt" id="reviews">
+  <div class="section__inner">
+    <div class="section__eyebrow">Отзывы</div>
+    <h2 class="section__title">Говорят клиенты</h2>
+    <div class="rating-row">
+      <div class="rating-pill">
+        <div class="rating-pill__score">4,9</div>
+        <div class="rating-pill__meta">Яндекс Карты<br>28+ отзывов</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <article class="review review--lead">
+        <div class="review__top">
+          <div class="review__name">Татьяна К.</div>
+          <div class="review__date">24 окт</div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Перед чисткой подробно собрала анамнез. Бережно, краснота сошла на следующий день. Дала рекомендации по уходу.</p>
+      </article>
+      <article class="review">
+        <div class="review__top">
+          <div class="review__name">Арзу Ш.</div>
+          <div class="review__date">25 сен</div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Уже ко второму приёму кожа спокойнее, тон лучше. Точно рекомендую.</p>
+      </article>
+      <article class="review">
+        <div class="review__top">
+          <div class="review__name">Анастасия Г.</div>
+          <div class="review__date">25 янв</div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">Первый опыт — довольна. Всё объясняет: для чего и почему. Подсказывает уход.</p>
+      </article>
+    </div>
+    <p class="reviews-note">
+      Подборка с Яндекс Карт.
+      <a href="https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/" target="_blank" rel="noopener">Все отзывы →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section__eyebrow">FAQ</div>
+  <h2 class="section__title">Частые вопросы</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Не знаю, что мне нужно — с чего начать?</summary>
+      <div class="faq-item__body">С разбора: разберём историю кожи и соберём протокол. Из прайса выбирать не обязательно — процедуры подключаем как шаги порядка.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Нужен ли курс?</summary>
+      <div class="faq-item__body">После первой процедуры скажу, нужен ли. Решение за вами — без обязательного пакета.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Принимаете подростков? Вы ставите диагноз?</summary>
+      <div class="faq-item__body">Подростков — от 11–12, запись через родителя. Диагнозы не ставлю; если нужен дерматолог — скажу прямо. Адрес: Мытищи, Шараповский пр., вл2с3.</div>
+    </details>
+  </div>
+</section>
+
+<section class="cta-band" id="contacts">
+  <div class="cta-card">
+    <div>
+      <div class="cta-card__eyebrow">Запись на разбор</div>
+      <h2>Напишите — соберём протокол под вашу кожу</h2>
+      <p>Коротко: что беспокоит и что уже пробовали. Отвечу и предложу окна.</p>
+      <div class="contact-lines">
+        <div class="contact-line"><b>WhatsApp:</b> <a href="tel:+79262673385">+7 (926) 267-33-85</a></div>
+        <div class="contact-line"><b>Адрес:</b> Мытищи, Шараповский пр., вл2с3</div>
+        <div class="contact-line contact-social is-hidden" id="cta-social-line"><b>Соцсети:</b>
+          <a id="cta-ig" href="#" target="_blank" rel="noopener">Instagram</a> ·
+          <a id="cta-tg-channel" href="#" target="_blank" rel="noopener">Telegram-канал</a>
+        </div>
+      </div>
+    </div>
+    <div class="cta-card__actions">
+      <button type="button" class="btn-wa" data-book="разбор кожи / индивидуальный протокол">WhatsApp</button>
+      <button type="button" class="btn-tg" data-book="разбор кожи / индивидуальный протокол">Telegram</button>
+      <a class="btn-primary" href="https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/" target="_blank" rel="noopener">На карте →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="../assets/web/logo.png" alt="">
+      Косметолог Бродская
+    </div>
+    <div class="footer__meta">Мытищи · протокол, не прайс</div>
+    <div class="footer__links">
+      <a id="foot-ig" class="is-hidden" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a id="foot-tg" class="is-hidden" href="#" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://wa.me/79262673385" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal-backdrop" id="book-modal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-labelledby="book-title">
+    <div class="modal__title" id="book-title">Запись</div>
+    <p class="modal__sub">Выберите мессенджер — текст заявки уже готов.</p>
+    <div class="modal__preview" id="book-preview"></div>
+    <div class="modal__actions">
+      <button type="button" class="btn-wa" id="book-wa">Открыть WhatsApp</button>
+      <button type="button" class="btn-tg" id="book-tg">Открыть Telegram</button>
+      <button type="button" class="modal__close" id="book-close">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/** CONFIG — подставьте ссылки перед публикацией */
+const CONFIG = {
+  phoneE164: "79262673385",
+  tgUsername: "",   // TODO: username без @ для личной записи
+  tgChannel: "",    // TODO: https://t.me/...
+  instagram: "",    // TODO: https://instagram.com/...
+  yandexOrg: "https://yandex.ru/maps/org/kosmetolog_brodskaya/140741377941/"
+};
+
+const SERVICES = [
+  {
+    id: "chistka", num: "01",
+    title: "Чистка лица с терапевтическим эффектом",
+    desc: "Очищение под задачу кожи: разбор, бережная техника, уход.",
+    price: "цена по запросу", focus: true, badge: "Чаще всего"
+  },
+  {
+    id: "coral", num: "02",
+    title: "Коралловый биологический пилинг",
+    desc: "Мягкое обновление рельефа и тона — по показаниям.",
+    price: "5 000 ₽"
+  },
+  {
+    id: "mid-peel", num: "03",
+    title: "Срединный пилинг",
+    desc: "Пигмент, тусклость, неровный рельеф — по показаниям.",
+    price: "5 000 ₽"
+  }
+];
+
+function bookingText(serviceTitle) {
+  return "Здравствуйте, Анна! Хочу записаться на «" + serviceTitle + "». Подскажите, пожалуйста, ближайшие свободные окна.";
+}
+function waUrl(text) {
+  return "https://wa.me/" + CONFIG.phoneE164 + "?text=" + encodeURIComponent(text);
+}
+function tgChatUrl() {
+  if (!CONFIG.tgUsername) return null;
+  return "https://t.me/" + CONFIG.tgUsername.replace(/^@/, "");
+}
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("toast--show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(function () { el.classList.remove("toast--show"); }, 2800);
+}
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; }
+  catch (e) { return false; }
+}
+function openWhatsApp(serviceTitle) {
+  window.open(waUrl(bookingText(serviceTitle)), "_blank", "noopener");
+}
+async function openTelegram(serviceTitle) {
+  const text = bookingText(serviceTitle);
+  const url = tgChatUrl();
+  const copied = await copyText(text);
+  if (!url) {
+    showToast(copied
+      ? "Текст скопирован. Укажите tgUsername в CONFIG"
+      : "Укажите Telegram @username в CONFIG (см. README)");
+    return;
+  }
+  window.open(url, "_blank", "noopener");
+  showToast(copied
+    ? "Текст скопирован — вставьте в чат (Telegram не подставляет текст в личку)"
+    : "Открыт Telegram — вставьте текст заявки вручную");
+}
+function openBookModal(serviceTitle) {
+  document.getElementById("book-title").textContent = "Запись: " + serviceTitle;
+  document.getElementById("book-preview").textContent = bookingText(serviceTitle);
+  const modal = document.getElementById("book-modal");
+  modal.classList.add("modal-backdrop--open");
+  modal.setAttribute("aria-hidden", "false");
+  document.getElementById("book-wa").onclick = function () { openWhatsApp(serviceTitle); };
+  document.getElementById("book-tg").onclick = function () { openTelegram(serviceTitle); };
+}
+function closeBookModal() {
+  const modal = document.getElementById("book-modal");
+  modal.classList.remove("modal-backdrop--open");
+  modal.setAttribute("aria-hidden", "true");
+}
+function renderServices() {
+  document.getElementById("services-grid").innerHTML = SERVICES.map(function (s) {
+    return '<article class="service' + (s.focus ? " service--focus" : "") + '">' +
+      (s.badge ? '<div class="service__badge">' + s.badge + "</div>" : "") +
+      '<div class="service__num">' + s.num + "</div>" +
+      '<div class="service__title">' + s.title + "</div>" +
+      '<div class="service__desc">' + s.desc + "</div>" +
+      '<div class="service__meta">' +
+        '<div class="service__price">' + s.price + "</div>" +
+        '<div class="service__unit">' + (s.price.indexOf("₽") >= 0 ? "за процедуру" : "уточняется при записи") + "</div>" +
+      "</div>" +
+      '<div class="service__actions">' +
+        '<button type="button" class="btn-wa" data-book="' + s.title.replace(/"/g, "&quot;") + '">WhatsApp</button>' +
+        '<button type="button" class="btn-tg" data-book="' + s.title.replace(/"/g, "&quot;") + '">Telegram</button>' +
+      "</div></article>";
+  }).join("");
+}
+function wireSocial() {
+  const hasIg = !!CONFIG.instagram;
+  const hasTgCh = !!CONFIG.tgChannel;
+  const navIg = document.getElementById("nav-ig");
+  const navTg = document.getElementById("nav-tg-channel");
+  const ctaLine = document.getElementById("cta-social-line");
+  const ctaIg = document.getElementById("cta-ig");
+  const ctaTg = document.getElementById("cta-tg-channel");
+  const footIg = document.getElementById("foot-ig");
+  const footTg = document.getElementById("foot-tg");
+
+  if (hasIg) {
+    [navIg, ctaIg, footIg].forEach(function (a) {
+      if (!a) return;
+      a.href = CONFIG.instagram;
+      a.classList.add("is-visible");
+      a.classList.remove("is-hidden");
+    });
+  }
+  if (hasTgCh) {
+    [navTg, ctaTg, footTg].forEach(function (a) {
+      if (!a) return;
+      a.href = CONFIG.tgChannel;
+      a.classList.add("is-visible");
+      a.classList.remove("is-hidden");
+    });
+  }
+  if (ctaLine && (hasIg || hasTgCh)) ctaLine.classList.remove("is-hidden");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  renderServices(); wireSocial();
+  document.body.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-book]");
+    if (!btn) return;
+    e.preventDefault();
+    openBookModal(btn.getAttribute("data-book"));
+  });
+  document.getElementById("book-close").addEventListener("click", closeBookModal);
+  document.getElementById("book-modal").addEventListener("click", function (e) {
+    if (e.target === e.currentTarget) closeBookModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeBookModal();
+  });
+});
+</script>
+</body>
+</html>
